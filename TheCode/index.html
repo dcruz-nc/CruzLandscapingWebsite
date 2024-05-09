@@ -8,14 +8,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/7795d7d81f.js" crossorigin="anonymous"></script>
+    <script src="script.js" defer></script>
     <link href="styles.css" rel="stylesheet">
 </head>
 <body>
     <div class="header">
         <div class="inner_header">
-            <div class="logo_container">
-                <h1>Cruz<span>Landscaping</span></h1>
-            </div>
+            <div class="logo_container" id="logoContainer">
+                <h1 id="logo">Cruz<span>Landscaping</span></h1>
+            </div>            
             <ul class="navigation">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="services.html">Services</a></li>
@@ -28,9 +29,25 @@
             
         </div>
        </div>
-   <div>
-    <img src="../TheCode/images/regency_poison.jpg" alt="regency_poison" class="home-img">
-   </div>
+ 
+       <section aria-label="slideshow" class="slideshow" data-slideshow>
+        <div>
+            <button class="slideshow-button prev" data-slideshow-button="prev"><i class="fa-solid fa-arrow-left"></i></button>
+            <ul data-slides>
+                <li class="slide" data-active>
+                    <img src="../TheCode/images/regency_poison.jpg" alt="regency_poison" class="home-img">
+                </li>
+                <li class="slide">
+                    <img src="../TheCode/images/our-mission.jpg" alt="our-mission" class="home-img">
+                </li>
+                <li class="slide">
+                    <img src="../TheCode/images/regency_grill.jpg" alt="regency_grill" class="home-img">
+                </li>
+            </ul>
+            <button class="slideshow-button next"  data-slideshow-button="next"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+    </section>
+    
 
    <div class="who-we-are-container">
     <div class="who-we-are-text">
@@ -46,22 +63,24 @@
 
 <div class="season-container">
     <div class="season-wrapper">
-        <img src="../TheCode/images/spring.jpg" alt="spring">
+        <img src="../TheCode/images/spring.jpg" alt="spring" class="season-image" data-season="spring">
         <p>Spring</p>
     </div>
     <div class="season-wrapper">
-        <img src="../TheCode/images/summer.jpg" alt="summer">
+        <img src="../TheCode/images/summer.jpg" alt="summer" class="season-image" data-season="summer">
         <p>Summer</p>
     </div>
     <div class="season-wrapper">
-        <img src="../TheCode/images/fall.jpg" alt="fall">
+        <img src="../TheCode/images/fall.jpg" alt="fall" class="season-image" data-season="fall">
         <p>Fall</p>
     </div>
     <div class="season-wrapper">
-        <img src="../TheCode/images/winter.jpg" alt="winter">
+        <img src="../TheCode/images/winter.jpg" alt="winter" class="season-image" data-season="winter">
         <p>Winter</p>
     </div>
 </div>
+
+
 <footer>
     <div class="footerContainer">
         <div class="socialIcons">
