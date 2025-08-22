@@ -47,34 +47,3 @@ seasonImages.forEach(image => {
     });
 });
 
-/* random image api dom manipulation*/
-function fetchRandomImage() {
-    const apiUrl = 'https://picsum.photos/360/300?grayscale&blur=2';
-    return fetch(apiUrl)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Failed to fetch image');
-            }
-            return response.url; 
-        })
-        .catch(error => {
-            console.error('Error fetching random image:', error);
-            return '../TheCode/images/regency_grill.jpg';
-        });
-}
-
-function setRandomBackgroundImages() {
-    const processSteps = document.querySelectorAll('.process-step');
-    processSteps.forEach(step => {
-        fetchRandomImage()
-            .then(imageUrl => {
-                step.style.backgroundImage = `url('${imageUrl}')`;
-            })
-            .catch(error => {
-                console.error('Error setting random background image:', error);
-                step.textContent = 'Failed to load image. Please try again later.';
-            });
-    });
-}
-
-window.addEventListener('load', setRandomBackgroundImages);
