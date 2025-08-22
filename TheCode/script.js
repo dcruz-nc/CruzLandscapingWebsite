@@ -47,3 +47,19 @@ seasonImages.forEach(image => {
     });
 });
 
+/* dropdown mobile */
+// Mobile Navigation Toggle
+function toggleMobileNav() {
+    const mobileNav = document.getElementById('mobileNav');
+    mobileNav.classList.toggle('active');
+}
+
+// Close mobile nav when clicking outside
+document.addEventListener('click', function(event) {
+    const mobileNav = document.getElementById('mobileNav');
+    const hamburger = document.querySelector('.hamburger');
+    
+    if (!hamburger.contains(event.target) && !mobileNav.contains(event.target)) {
+        mobileNav.classList.remove('active');
+    }
+});
