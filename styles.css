@@ -9,10 +9,20 @@ html, body {
     overflow-x: hidden;
     width: 100%;
     position: relative;
+
+     height: 100%;       /* Full height */
+    margin: 0;          /* Reset */
+    display: flex;      /* Flex layout */
+    flex-direction: column;
 }
 
 body{
     background-color: #cccccc;
+    margin: 0;
+}
+
+.main-content {
+    flex: 1;
 }
 
 /* header */
@@ -270,6 +280,7 @@ body{
     box-sizing: border-box;
     background-color: #232323;
     font-family: 'Roboto';
+     margin-top: auto;
    }
 
    .footerContainer {
