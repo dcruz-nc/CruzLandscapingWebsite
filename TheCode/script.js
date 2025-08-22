@@ -18,17 +18,6 @@ buttons.forEach(button => {
 });
 
 
-/* logo spin */
-
-const logo = document.getElementById('logo');
-
-logo.addEventListener('mouseenter', () => {
-    logo.classList.add('rotate'); 
-});
-
-logo.addEventListener('mouseleave', () => {
-    logo.classList.remove('rotate'); 
-});
 
 
 /* glow */
