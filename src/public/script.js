@@ -2,20 +2,33 @@
 
 const buttons = document.querySelectorAll("[data-slideshow-button]");
 
+function changeSlide(offset) {
+    const slideshowRoot = document.querySelector("[data-slideshow]");
+    if (!slideshowRoot) return;
+    const slides = slideshowRoot.querySelector('[data-slides]');
+    if (!slides) return;
+
+    const activeSlide = slides.querySelector("[data-active]");
+    const allSlides = [...slides.children];
+    if (allSlides.length === 0) return;
+    const activeIndex = Math.max(0, allSlides.indexOf(activeSlide));
+    let newIndex = activeIndex + offset;
+    if (newIndex < 0) newIndex = allSlides.length - 1;
+    if (newIndex >= allSlides.length) newIndex = 0;
+
+    allSlides[newIndex].setAttribute('data-active', true);
+    if (activeSlide) activeSlide.removeAttribute('data-active');
+}
+
 buttons.forEach(button => {
     button.addEventListener("click", () => {
         const offset = button.dataset.slideshowButton === "next" ? 1 : -1;
-        const slides = button.closest("[data-slideshow]").querySelector('[data-slides]');
-
-        const activeSlide = slides.querySelector("[data-active]");
-        let newIndex = [...slides.children].indexOf(activeSlide) + offset;
-        if (newIndex < 0) newIndex = slides.children.length - 1;
-        if (newIndex >= slides.children.length) newIndex = 0;
-
-        slides.children[newIndex].setAttribute('data-active', true);
-        activeSlide.removeAttribute('data-active');
+        changeSlide(offset);
     });
 });
+
+// Auto-advance every 10 seconds
+setInterval(() => changeSlide(1), 10000);
 
 
 /* dropdown mobile */
