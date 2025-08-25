@@ -27,7 +27,6 @@
                 <span class="button-like">GET A QUOTE</span>
                 </a></li>
             </ul>
-            
             <!-- Hamburger Menu (NEW) -->
             <div class="hamburger" onclick="toggleMobileNav()">
                 <span></span>
@@ -36,7 +35,6 @@
             </div>
         </div>
     </div>
-
     <!-- Mobile Navigation (NEW) -->
     <div class="mobile-nav" id="mobileNav">
         <ul>
@@ -47,26 +45,54 @@
             <li><a href="quote.html" class="button-like">GET A QUOTE</a></li>
         </ul>
     </div>
- 
     <div class="main-content">
     <section aria-label="slideshow" class="slideshow" data-slideshow>
-        <div>
-            <button class="slideshow-button prev" data-slideshow-button="prev"><i class="fa-solid fa-arrow-left"></i></button>
+        <div class="slideshow-container">
             <ul data-slides>
                 <li class="slide" data-active>
                     <img src="images/regency_poison.jpg" alt="regency_poison" class="home-img">
+                    <div class="slide-overlay">
+                        <div class="slide-content">
+                            <h2>Transform Your Outdoor Space</h2>
+                            <p>Professional landscaping services that bring your vision to life</p>
+                        </div>
+                    </div>
                 </li>
                 <li class="slide">
                     <img src="images/our-mission.jpg" alt="our-mission" class="home-img">
+                    <div class="slide-overlay">
+                        <div class="slide-content">
+                            <h2>Our Mission</h2>
+                            <p>Creating beautiful, sustainable landscapes that enhance your property</p>
+                        </div>
+                    </div>
                 </li>
                 <li class="slide">
                     <img src="images/regency_grill.jpg" alt="regency_grill" class="home-img">
+                    <div class="slide-overlay">
+                        <div class="slide-content">
+                            <h2>Quality Craftsmanship</h2>
+                            <p>Expert attention to detail in every project we undertake</p>
+                        </div>
+                    </div>
                 </li>
             </ul>
-            <button class="slideshow-button next"  data-slideshow-button="next"><i class="fa-solid fa-arrow-right"></i></button>
+            
+            <!-- Modern Navigation -->
+            <div class="slideshow-nav">
+                <div class="slideshow-dots" data-slideshow-dots></div>
+                <div class="slideshow-counter">
+                    <span class="current-slide">1</span>
+                    <span class="total-slides">/3</span>
+                </div>
+            </div>
+            
+            <!-- Progress Bar -->
+            <div class="slideshow-progress">
+                <div class="progress-bar" data-progress-bar></div>
+            </div>
         </div>
     </section>
-    
     <div class="who-we-are-container">
         <div class="who-we-are-text">
             <h2>Who We Are</h2>
@@ -78,7 +104,6 @@
             <img src="images/who-we-are.jpg" alt="Who We Are Image" class="who-we-are-image">
         </div>
     </div>      
-
     <div class="season-container">
         <div class="season-wrapper">
             <img src="images/spring.jpg" alt="spring" class="season-image" data-season="spring">
@@ -94,7 +119,6 @@
         </div>
     </div>
 </div>
-
     <footer>
         <div class="footerContainer">
             <div class="socialIcons">
