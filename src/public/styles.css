@@ -5,6 +5,36 @@
     text-decoration: none;
 }
 
+/* Design tokens root */
+:root {
+    --green-700: #4f6a00;
+    --green-600: #6D8D00;
+    --green-500: #8DB600;
+    --earth-700: #1e1e1e;
+    --earth-600: #232323;
+    --earth-300: #e6e6e6;
+    --neutral-100: #ffffff;
+    --neutral-50: #f7f9f6;
+
+    --text-primary: #232323;
+    --text-inverse: #ffffff;
+
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+    --shadow-md: 0 6px 18px rgba(0,0,0,0.12);
+    --shadow-lg: 0 12px 28px rgba(0,0,0,0.18);
+
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+
+    --space-xs: 6px;
+    --space-sm: 10px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 40px;
+    --space-2xl: 64px;
+}
+
 html, body {
     overflow-x: hidden;
     width: 100%;

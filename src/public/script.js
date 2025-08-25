@@ -20,15 +20,23 @@ function changeSlide(offset) {
     if (activeSlide) activeSlide.removeAttribute('data-active');
 }
 
+let slideTimer = null;
+
+function startAutoAdvance() {
+    if (slideTimer) clearInterval(slideTimer);
+    slideTimer = setInterval(() => changeSlide(1), 10000);
+}
+
 buttons.forEach(button => {
     button.addEventListener("click", () => {
         const offset = button.dataset.slideshowButton === "next" ? 1 : -1;
         changeSlide(offset);
+        startAutoAdvance();
     });
 });
 
-// Auto-advance every 10 seconds
-setInterval(() => changeSlide(1), 10000);
+// Auto-advance every 10 seconds, and ensure timer resets on manual navigation
+startAutoAdvance();
 
 
 /* dropdown mobile */
