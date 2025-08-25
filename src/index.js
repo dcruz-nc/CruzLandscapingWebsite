@@ -9,12 +9,12 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 
-// Serve static files with live-reload injected
+// Serve static files with live-reload injected - UPDATED PATH
 const publicDir = path.join(__dirname, 'public');
 app.use(connectLivereload());
 app.use(express.static(publicDir));
 
-// LiveReload server watches the public directory
+// LiveReload server watches the src/public directory
 const liveReloadServer = livereload.createServer();
 liveReloadServer.watch(publicDir);
 liveReloadServer.server.once('connection', () => {
@@ -60,5 +60,3 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
-
-
