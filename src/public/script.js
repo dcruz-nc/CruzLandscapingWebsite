@@ -1,46 +1,158 @@
-/* slideshow (carousel) */
+/* Modern Slideshow with Dot Navigation */
 
-const buttons = document.querySelectorAll("[data-slideshow-button]");
+const slideshowRoot = document.querySelector("[data-slideshow]");
+const slides = slideshowRoot?.querySelector('[data-slides]');
+const dotsContainer = document.querySelector("[data-slideshow-dots]");
+const progressBar = document.querySelector("[data-progress-bar]");
+const currentSlideSpan = document.querySelector(".current-slide");
 
-function changeSlide(offset) {
-    const slideshowRoot = document.querySelector("[data-slideshow]");
-    if (!slideshowRoot) return;
-    const slides = slideshowRoot.querySelector('[data-slides]');
-    if (!slides) return;
+let currentSlideIndex = 0;
+let slideTimer = null;
+let progressInterval = null;
 
-    const activeSlide = slides.querySelector("[data-active]");
+// Initialize slideshow
+function initSlideshow() {
+    if (!slides || !dotsContainer) return;
+    
     const allSlides = [...slides.children];
-    if (allSlides.length === 0) return;
-    const activeIndex = Math.max(0, allSlides.indexOf(activeSlide));
-    let newIndex = activeIndex + offset;
-    if (newIndex < 0) newIndex = allSlides.length - 1;
-    if (newIndex >= allSlides.length) newIndex = 0;
-
-    allSlides[newIndex].setAttribute('data-active', true);
-    if (activeSlide) activeSlide.removeAttribute('data-active');
+    
+    // Create dot navigation
+    allSlides.forEach((_, index) => {
+        const dot = document.createElement('div');
+        dot.className = 'dot';
+        dot.setAttribute('data-slide-index', index);
+        dot.addEventListener('click', () => goToSlide(index));
+        dotsContainer.appendChild(dot);
+    });
+    
+    // Set initial state
+    updateActiveSlide(0);
+    startAutoAdvance();
+    startProgressBar();
 }
 
-let slideTimer = null;
+// Go to specific slide
+function goToSlide(index) {
+    const allSlides = [...slides.children];
+    const allDots = [...dotsContainer.children];
+    
+    if (index < 0 || index >= allSlides.length) return;
+    
+    // Remove active state from current slide and dot
+    const currentSlide = slides.querySelector("[data-active]");
+    const currentDot = dotsContainer.querySelector(".dot.active");
+    
+    if (currentSlide) currentSlide.removeAttribute('data-active');
+    if (currentDot) currentDot.classList.remove('active');
+    
+    // Set new active slide and dot
+    allSlides[index].setAttribute('data-active', true);
+    allDots[index].classList.add('active');
+    
+    // Update counter
+    currentSlideIndex = index;
+    if (currentSlideSpan) {
+        currentSlideSpan.textContent = index + 1;
+    }
+    
+    // Reset timer and progress
+    startAutoAdvance();
+    startProgressBar();
+}
 
+// Next slide
+function nextSlide() {
+    const allSlides = [...slides.children];
+    const nextIndex = (currentSlideIndex + 1) % allSlides.length;
+    goToSlide(nextIndex);
+}
+
+// Previous slide
+function prevSlide() {
+    const allSlides = [...slides.children];
+    const prevIndex = currentSlideIndex === 0 ? allSlides.length - 1 : currentSlideIndex - 1;
+    goToSlide(prevIndex);
+}
+
+// Update active slide state
+function updateActiveSlide(index) {
+    currentSlideIndex = index;
+    if (currentSlideSpan) {
+        currentSlideSpan.textContent = index + 1;
+    }
+    
+    // Update dots
+    const allDots = [...dotsContainer.children];
+    allDots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+    });
+}
+
+// Auto-advance functionality
 function startAutoAdvance() {
     if (slideTimer) clearInterval(slideTimer);
-    slideTimer = setInterval(() => changeSlide(1), 10000);
+    slideTimer = setInterval(nextSlide, 10000);
 }
 
-buttons.forEach(button => {
-    button.addEventListener("click", () => {
-        const offset = button.dataset.slideshowButton === "next" ? 1 : -1;
-        changeSlide(offset);
-        startAutoAdvance();
-    });
+// Progress bar functionality
+function startProgressBar() {
+    if (progressInterval) clearInterval(progressInterval);
+    
+    if (progressBar) {
+        progressBar.style.width = '0%';
+        
+        progressInterval = setInterval(() => {
+            const currentWidth = parseFloat(progressBar.style.width) || 0;
+            const increment = 100 / (10000 / 100); // 10 seconds = 10000ms, update every 100ms
+            
+            if (currentWidth >= 100) {
+                progressBar.style.width = '0%';
+            } else {
+                progressBar.style.width = (currentWidth + increment) + '%';
+            }
+        }, 100);
+    }
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') {
+        prevSlide();
+    } else if (e.key === 'ArrowRight') {
+        nextSlide();
+    }
 });
 
-// Auto-advance every 10 seconds, and ensure timer resets on manual navigation
-startAutoAdvance();
+// Touch/swipe support for mobile
+let touchStartX = 0;
+let touchEndX = 0;
 
+slideshowRoot?.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+});
 
-/* dropdown mobile */
-// Mobile Navigation Toggle
+slideshowRoot?.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+});
+
+function handleSwipe() {
+    const swipeThreshold = 50;
+    const diff = touchStartX - touchEndX;
+    
+    if (Math.abs(diff) > swipeThreshold) {
+        if (diff > 0) {
+            nextSlide(); // Swipe left
+        } else {
+            prevSlide(); // Swipe right
+        }
+    }
+}
+
+// Initialize slideshow when DOM is loaded
+document.addEventListener('DOMContentLoaded', initSlideshow);
+
+/* Mobile Navigation Toggle */
 function toggleMobileNav() {
     const mobileNav = document.getElementById('mobileNav');
     mobileNav.classList.toggle('active');
