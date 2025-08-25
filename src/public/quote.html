@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/7795d7d81f.js" crossorigin="anonymous"></script>
+    <link href="styles.css" rel="stylesheet">
+    <script src="script.js" defer></script>
+    <script src="form-handler.js" defer></script>
+</head>
+<body>
+    <div class="header">
+        <div class="inner_header">
+            <div class="logo_container" id="logoContainer">
+                <h1 id="logo">Cruz<span>Landscaping</span></h1>
+            </div>            
+            <!-- Desktop Navigation -->
+            <ul class="navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="quote.html"> 
+                <span class="button-like">GET A QUOTE</span>
+                </a></li>
+            </ul>
+            
+            <!-- Hamburger Menu (NEW) -->
+            <div class="hamburger" onclick="toggleMobileNav()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation (NEW) -->
+    <div class="mobile-nav" id="mobileNav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="quote.html" class="button-like">GET A QUOTE</a></li>
+        </ul>
+    </div>
+    
+<div class="main-content">
+       <div class="title">
+        <h2>Our Process</h2>
+       </div>
+
+       <div class="process-container">
+        <div class="process-step">
+            
+            <h3>Step 1: First Contact</h3>
+            <p>Reach out to us to discuss your landscaping needs and schedule an initial consultation.</p>
+        </div>
+        <div class="process-step">
+            <h3>Step 2: Quote Visit</h3>
+            <p>Our team will visit your home or business to assess your lawn care needs and provide a detailed quote for our services.</p>
+        </div>
+        <div class="process-step">
+            <h3>Step 3: Planning</h3>
+            <p>Together, we'll create a customized plan tailored to your property's requirements and your preferences.</p>
+        </div>
+        <div class="process-step">
+            <h3>Step 4: Service Commencement</h3>
+            <p>Once the plan is finalized, we'll begin our landscaping and maintenance services!</p>
+        </div>
+    </div>
+
+    <div class="quote-container">
+        <img src="images/our-mission.jpg" alt="Image" class="quote-image">
+    <div class="quote-left-side">
+        <h2>Get In Touch</h2>
+        <p>Feel free to contact us via phone or email. Alternatively, you can fill out the form on the right, and we'll get back to you as soon as possible. We look forward to meeting you!</p>
+        <p>Phone: 704-929-6571</p>
+        <p>Email: CruzLandscapingBusiness@gmail.com</p>
+       
+    </div>
+    <div class="quote-form">
+        <form>
+            <label for="fname">First Name:</label>
+            <input type="text" id="fname" name="fname" required>
+            <label for="lname">Last Name:</label>
+            <input type="text" id="lname" name="lname" required>
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message"></textarea>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</div>
+</div>
+
+       <footer>
+        <div class="footerContainer">
+            <div class="socialIcons">
+                <a href=""><i class="fa-brands fa-facebook"></i></a>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+                <a href=""><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+            <div class="footerNav">
+                <ul>
+                    <li><a href="quote.html">Contact Us: 704-929-6571</a></li>
+                    <li><a href="quote.html">Location: Mooresville, North Carolina</a></li>
+                </ul>
+            </div>   
+        </div>
+        <div class="footerBottom">
+            <p>Copyright &copy; 2024 Cruz Landscaping. Designed by David Cruz.</p>
+        </div>
+    </footer>
+</body>
+</html>
