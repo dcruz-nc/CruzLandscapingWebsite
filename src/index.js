@@ -1,15 +1,27 @@
 require('dotenv').config();
 const express = require('express');
 const path = require('path');
+const livereload = require('livereload');
+const connectLivereload = require('connect-livereload');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 
-// Serve static files
+// Serve static files with live-reload injected
 const publicDir = path.join(__dirname, 'public');
+app.use(connectLivereload());
 app.use(express.static(publicDir));
+
+// LiveReload server watches the public directory
+const liveReloadServer = livereload.createServer();
+liveReloadServer.watch(publicDir);
+liveReloadServer.server.once('connection', () => {
+  setTimeout(() => {
+    liveReloadServer.refresh('/');
+  }, 100);
+});
 
 // Local equivalent of Netlify function for contact
 app.post('/.netlify/functions/contact', async (req, res) => {

@@ -18,24 +18,6 @@ buttons.forEach(button => {
 });
 
 
-
-
-/* glow */
-
-const seasonImages = document.querySelectorAll('.season-image');
-
-seasonImages.forEach(image => {
-    image.addEventListener('mouseenter', () => {
-        const season = image.dataset.season;
-        image.classList.add(`${season}-glow`); 
-    });
-
-    image.addEventListener('mouseleave', () => {
-        const season = image.dataset.season;
-        image.classList.remove(`${season}-glow`);
-    });
-});
-
 /* dropdown mobile */
 // Mobile Navigation Toggle
 function toggleMobileNav() {
