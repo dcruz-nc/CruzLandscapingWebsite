@@ -227,6 +227,8 @@ body{
     display: flex;
     margin-top: 100px;
     margin-bottom: 100px;
+    align-items: center;
+    gap: 30px;
 }
 
 .who-we-are-text { /* container */
@@ -234,20 +236,36 @@ body{
     display:flex;
     flex-direction: column;
     padding-right: 20px; 
-    padding: 20px; 
+    padding: 28px; 
     font-family: 'Roboto';
     color: #232323; 
+    background: #ffffff;
+    border: 1px solid rgba(0,0,0,0.06);
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.10);
 }
 
 .who-we-are-text h2 { /* title */
-    font-size: 40px;
+    font-size: 48px;
+    line-height: 1.1;
+    letter-spacing: 0.2px;
+    position: relative;
+    margin-bottom: 12px;
+}
+.who-we-are-text h2::after {
+    content: "";
+    display: block;
+    width: 72px;
+    height: 4px;
+    margin-top: 10px;
+    background: linear-gradient(90deg, #8DB600, #6D8D00);
+    border-radius: 4px;
 }
 
 .who-we-are-text p { /* paragraph */
-   
-    font-size: 25px;
-    line-height: 1.5;
-    
+    font-size: 20px;
+    line-height: 1.7;
+    color: #2e2e2e;
 }
 
 .who-we-are-image {
@@ -264,6 +282,8 @@ body{
     border-radius: 15px;
     object-fit: cover;
     object-position: center;
+    box-shadow: 0 10px 26px rgba(0,0,0,0.18);
+    border: 1px solid rgba(0,0,0,0.06);
 }
 
 
