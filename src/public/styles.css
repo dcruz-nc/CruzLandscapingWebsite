@@ -397,171 +397,308 @@ body{
     z-index: 1;
 }
 
-/* who we are section */
+/* Modern Professional Who We Are Section */
 
-.who-we-are-container {
-    display: flex;
-    margin-top: 80px;
-    margin-bottom: 80px;
-    align-items: center;
-    gap: 40px;
-    position: relative;
-    padding: 0 20px;
-}
-
-.who-we-are-container::before {
-    content: '';
-    position: absolute;
-    top: -40px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-    height: 3px;
-    background: linear-gradient(90deg, 
-        transparent 0%, 
-        var(--green-500) 20%, 
-        var(--green-600) 50%, 
-        var(--green-500) 80%, 
-        transparent 100%);
-    border-radius: 2px;
-    opacity: 0.4;
-}
-
-.who-we-are-text { /* container */
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    padding: 30px 28px; 
-    font-family: 'Roboto';
-    color: var(--text-primary); 
+.who-we-are-section {
     background: linear-gradient(135deg, 
-        rgba(255, 255, 255, 0.95) 0%, 
-        rgba(255, 255, 255, 0.98) 100%);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(141, 182, 0, 0.15);
+        rgba(247, 249, 246, 0.98) 0%, 
+        rgba(255, 255, 255, 1) 100%);
+    padding: 120px 0;
+    position: relative;
+}
+
+.who-we-are-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 80px;
+    padding: 0 40px;
+}
+
+.who-we-are-header h2 {
+    font-size: 3.2rem;
+    font-weight: 200;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+}
+
+.who-we-are-header p {
+    font-size: 1.3rem;
+    color: var(--earth-600);
+    font-weight: 300;
+    line-height: 1.7;
+}
+
+.who-we-are-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* Story Cards Section */
+.who-we-are-story {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 80px;
+}
+
+.story-card {
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.98) 0%, 
+        rgba(255, 255, 255, 1) 100%);
     border-radius: 20px;
-    box-shadow: 0 16px 32px rgba(0,0,0,0.08);
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+    border: 1px solid rgba(141, 182, 0, 0.1);
+    transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
-    transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.who-we-are-text::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, 
-        var(--green-500) 0%, 
-        var(--green-600) 25%, 
-        var(--green-500) 50%, 
-        var(--green-600) 75%, 
-        var(--green-500) 100%);
-    border-radius: 24px 24px 0 0;
-}
-
-.who-we-are-text::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    right: -2px;
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, 
-        transparent 0%, 
-        transparent 40%, 
-        rgba(141, 182, 0, 0.1) 50%, 
-        transparent 60%, 
-        transparent 100%);
-    border-radius: 50%;
-    filter: blur(8px);
-}
-
-.who-we-are-text:hover {
+.story-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 30px 60px rgba(0,0,0,0.12);
-    border-color: rgba(141, 182, 0, 0.25);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    border-color: rgba(141, 182, 0, 0.2);
 }
 
-.who-we-are-text h2 { /* title */
-    font-size: 2.8rem;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    position: relative;
-    margin-bottom: 16px;
-    font-weight: 200;
-    background: linear-gradient(135deg, var(--text-primary) 0%, var(--earth-600) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.who-we-are-text h2::after {
-    content: "";
-    display: block;
+.story-icon {
     width: 80px;
-    height: 3px;
-    margin-top: 15px;
-    background: linear-gradient(90deg, 
-        var(--green-500) 0%, 
-        var(--green-600) 50%, 
-        var(--green-500) 100%);
-    border-radius: 2px;
-    box-shadow: 0 2px 8px rgba(141, 182, 0, 0.3);
+    height: 80px;
+    margin: 0 auto 24px;
+    background: linear-gradient(135deg, var(--green-500), var(--green-600));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgba(141, 182, 0, 0.3);
 }
 
-.who-we-are-text p { /* paragraph */
-    font-size: 1.1rem;
+.story-icon i {
+    font-size: 2rem;
+    color: white;
+}
+
+.story-card h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+}
+
+.story-card p {
+    font-size: 1rem;
     line-height: 1.7;
     color: var(--earth-600);
     font-weight: 300;
-    letter-spacing: 0.01em;
 }
 
-.who-we-are-image {
-    flex: 1;
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
+/* Showcase Section */
+.who-we-are-showcase {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.showcase-image {
     position: relative;
-}
-
-.who-we-are-image::before {
-    content: '';
-    position: absolute;
-    top: -20px;
-    left: -20px;
-    right: -20px;
-    bottom: -20px;
-    background: linear-gradient(135deg, 
-        rgba(141, 182, 0, 0.1) 0%, 
-        rgba(141, 182, 0, 0.05) 50%, 
-        rgba(141, 182, 0, 0.1) 100%);
-    border-radius: 30px;
-    filter: blur(20px);
-    z-index: -1;
-}
-
-.who-we-are-image img {
-    width: 65%;
-    aspect-ratio: 1 / 1;
-    display: block;
     border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+}
+
+.showcase-image img {
+    width: 100%;
+    height: 400px;
     object-fit: cover;
     object-position: center;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-    border: 2px solid rgba(255, 255, 255, 0.8);
+    display: block;
     transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
     filter: saturate(1.1) contrast(1.05);
 }
 
-.who-we-are-image:hover img {
-    transform: scale(1.02) rotate(1deg);
-    box-shadow: 0 35px 70px rgba(0,0,0,0.2);
-    filter: saturate(1.2) contrast(1.1);
+.showcase-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(180deg, 
+        transparent 0%, 
+        rgba(35, 35, 35, 0.9) 100%);
+    padding: 30px;
+    color: white;
+}
+
+.showcase-stats {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--green-500);
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+.showcase-content h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 24px;
+    letter-spacing: -0.01em;
+}
+
+.showcase-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1rem;
+    color: var(--earth-600);
+    font-weight: 500;
+}
+
+.feature-item i {
+    color: var(--green-500);
+    font-size: 1.1rem;
+    width: 20px;
+    text-align: center;
+}
+
+.showcase-description {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--earth-600);
+    font-weight: 300;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .who-we-are-section {
+        padding: 80px 0;
+    }
+    
+    .who-we-are-header {
+        margin-bottom: 60px;
+        padding: 0 20px;
+    }
+    
+    .who-we-are-header h2 {
+        font-size: 2.5rem;
+    }
+    
+    .who-we-are-header p {
+        font-size: 1.1rem;
+    }
+    
+    .who-we-are-content {
+        padding: 0 20px;
+    }
+    
+    .who-we-are-story {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        margin-bottom: 60px;
+    }
+    
+    .story-card {
+        padding: 30px 24px;
+    }
+    
+    .story-icon {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 20px;
+    }
+    
+    .story-icon i {
+        font-size: 1.8rem;
+    }
+    
+    .story-card h3 {
+        font-size: 1.3rem;
+    }
+    
+    .who-we-are-showcase {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .showcase-image {
+        order: -1;
+    }
+    
+    .showcase-image img {
+        height: 300px;
+    }
+    
+    .showcase-stats {
+        gap: 30px;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+    
+    .showcase-features {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .showcase-content h3 {
+        font-size: 1.6rem;
+    }
+    
+    .showcase-description {
+        font-size: 1rem;
+    }
+}
+
+/* Tablet Responsive */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .who-we-are-content {
+        padding: 0 30px;
+    }
+    
+    .who-we-are-story {
+        gap: 25px;
+    }
+    
+    .story-card {
+        padding: 35px 25px;
+    }
+    
+    .who-we-are-showcase {
+        gap: 50px;
+    }
+    
+    .showcase-image img {
+        height: 350px;
+    }
 }
 
 
@@ -1527,54 +1664,7 @@ body{
     }
 }
 
-/* Mobile Who We Are Section */
-@media (max-width: 768px) {
-    .who-we-are-container {
-        flex-direction: column;
-        margin-top: 60px;
-        margin-bottom: 60px;
-        padding: 0 20px;
-        gap: 30px;
-    }
-    
-    .who-we-are-container::before {
-        width: 90%;
-        top: -25px;
-    }
-    
-    .who-we-are-text {
-        padding: 25px 20px;
-        text-align: center;
-    }
-    
-    .who-we-are-text h2 {
-        font-size: 2.4rem;
-        text-align: center;
-    }
-    
-    .who-we-are-text p {
-        font-size: 1rem;
-        text-align: center;
-    }
-    
-    .who-we-are-image {
-        margin-top: 15px;
-    }
-    
-    .who-we-are-image img {
-        width: 80%;
-        aspect-ratio: 1 / 1;
-        object-fit: cover;
-        object-position: center;
-    }
-    
-    .who-we-are-image::before {
-        top: -12px;
-        left: -12px;
-        right: -12px;
-        bottom: -12px;
-    }
-}
+
 
 
 
