@@ -776,6 +776,12 @@ body{
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.showcase-image:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 28px 80px rgba(0,0,0,0.25);
 }
 
 .showcase-image img {
@@ -786,6 +792,11 @@ body{
     display: block;
     transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
     filter: saturate(1.1) contrast(1.05);
+}
+
+.showcase-image:hover img {
+    transform: scale(1.05);
+    filter: saturate(1.2) contrast(1.1);
 }
 
 .showcase-overlay {
