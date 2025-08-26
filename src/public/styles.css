@@ -1076,48 +1076,286 @@ body{
     }
    }
 
-   /* services */
+   /* Modern Professional Portfolio Section */
 
-   .title {
+#portfolio {
+    background: linear-gradient(135deg, 
+        rgba(247, 249, 246, 0.98) 0%, 
+        rgba(255, 255, 255, 1) 100%);
+    padding: 120px 0;
+    position: relative;
+}
+
+.portfolio-header {
     text-align: center;
-    margin-top: 150px;
-   }
-
-   .title h2 {
-    font-size: 60px;
-    color:#232323;
-    font-family: 'Roboto';
-   }
-
-   /* gallery - masonry */
-
-   .gallery-container {
-  column-count: 3;
-  column-gap: 16px;
-  margin-top: 40px;
-  margin-bottom: 40px;
+    max-width: 800px;
+    margin: 0 auto 80px;
+    padding: 0 40px;
 }
 
-.gallery-image {
-  break-inside: avoid;
-  margin-bottom: 16px;
-  display: block;
+.portfolio-header h2 {
+    font-size: 3.2rem;
+    font-weight: 200;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
 }
 
-.gallery-image img {
-  position: static;
+.portfolio-header p {
+    font-size: 1.3rem;
+    color: var(--earth-600);
+    font-weight: 300;
+    line-height: 1.7;
+}
+
+/* Featured Projects */
+.portfolio-featured {
+    max-width: 1400px;
+    margin: 0 auto 100px;
+    padding: 0 40px;
+}
+
+.portfolio-featured h3 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 40px;
+    text-align: center;
+    letter-spacing: -0.01em;
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 30px;
+    grid-template-rows: auto auto;
+}
+
+.featured-project {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+    transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.featured-project.large {
+    grid-row: span 2;
+}
+
+.featured-project:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.18);
+}
+
+.project-image {
+    position: relative;
     width: 100%;
-  height: auto;
-  display: block;
-    object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+    height: 100%;
+    min-height: 300px;
 }
 
-.gallery-image img:hover {
-  transform: translateY(-2px) scale(1.01);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+.featured-project.large .project-image {
+    min-height: 620px;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
+    filter: saturate(1.1) contrast(1.05);
+}
+
+.featured-project:hover .project-image img {
+    transform: scale(1.05);
+    filter: saturate(1.2) contrast(1.1);
+}
+
+.project-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(180deg, 
+        transparent 0%, 
+        rgba(35, 35, 35, 0.9) 100%);
+    padding: 30px;
+    color: white;
+    transition: all 400ms ease;
+}
+
+.project-info h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: white;
+}
+
+.project-info p {
+    font-size: 1rem;
+    margin-bottom: 12px;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 300;
+}
+
+.project-category {
+    background: linear-gradient(135deg, var(--green-500), var(--green-600));
+    color: white;
+    padding: 6px 12px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+
+
+/* Portfolio CTA */
+.portfolio-cta {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.portfolio-cta-content {
+    background: linear-gradient(135deg, var(--green-500), var(--green-600));
+    border-radius: 20px;
+    padding: 60px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-cta-content h3 {
+    font-size: 2.2rem;
+    font-weight: 200;
+    color: white;
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+}
+
+.portfolio-cta-content p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 32px;
+    font-weight: 300;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.portfolio-cta-button {
+    background: white;
+    color: var(--green-600);
+    padding: 16px 32px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    display: inline-block;
+    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+.portfolio-cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.2);
+    background: rgba(255, 255, 255, 0.95);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    #portfolio {
+        padding: 80px 0;
+    }
+    
+    .portfolio-header {
+        margin-bottom: 60px;
+        padding: 0 20px;
+    }
+    
+    .portfolio-header h2 {
+        font-size: 2.5rem;
+    }
+    
+    .portfolio-header p {
+        font-size: 1.1rem;
+    }
+    
+    .portfolio-featured {
+        margin-bottom: 80px;
+        padding: 0 20px;
+    }
+    
+    .portfolio-featured h3 {
+        font-size: 1.8rem;
+    }
+    
+    .featured-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        grid-template-rows: auto;
+    }
+    
+    .featured-project.large {
+        grid-row: span 1;
+    }
+    
+    .project-image,
+    .featured-project.large .project-image {
+        min-height: 250px;
+    }
+    
+    .project-overlay {
+        padding: 20px;
+    }
+    
+    .project-info h4 {
+        font-size: 1.3rem;
+    }
+    
+
+    
+    .portfolio-cta {
+        padding: 0 20px;
+    }
+    
+    .portfolio-cta-content {
+        padding: 40px 24px;
+    }
+    
+    .portfolio-cta-content h3 {
+        font-size: 1.8rem;
+    }
+    
+    .portfolio-cta-content p {
+        font-size: 1rem;
+    }
+}
+
+/* Tablet Responsive */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .portfolio-featured {
+        padding: 0 30px;
+    }
+    
+    .featured-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+    }
+    
+    .featured-project.large {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+    
+
+    
+    .portfolio-cta {
+        padding: 0 30px;
+    }
 }
 
 /* About Section */
@@ -1908,14 +2146,7 @@ body{
     }
 }
 
-/* Mobile Gallery */
-@media (max-width: 768px) {
-    .gallery-container {
-        column-count: 2;
-        column-gap: 10px;
-        margin: 30px 10px;
-    }
-}
+
 
 
 
