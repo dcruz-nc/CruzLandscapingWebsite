@@ -152,18 +152,57 @@ function handleSwipe() {
 // Initialize slideshow when DOM is loaded
 document.addEventListener('DOMContentLoaded', initSlideshow);
 
-/* Mobile Navigation Toggle */
+/* Modern Mobile Navigation Toggle */
 function toggleMobileNav() {
     const mobileNav = document.getElementById('mobileNav');
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    
     mobileNav.classList.toggle('active');
+    mobileMenuBtn.classList.toggle('active');
 }
 
 // Close mobile nav when clicking outside
 document.addEventListener('click', function(event) {
     const mobileNav = document.getElementById('mobileNav');
-    const hamburger = document.querySelector('.hamburger');
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const overlay = document.querySelector('.mobile-nav-overlay');
     
-    if (!hamburger.contains(event.target) && !mobileNav.contains(event.target)) {
+    // Close if clicking on overlay
+    if (event.target === overlay) {
         mobileNav.classList.remove('active');
+        mobileMenuBtn.classList.remove('active');
     }
 });
+
+// Close mobile nav when clicking on anchor links or CTA buttons
+document.addEventListener('click', function(event) {
+    const mobileNav = document.getElementById('mobileNav');
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    
+    // Check if the clicked element is inside a mobile nav link
+    const clickedLink = event.target.closest('.mobile-nav-link');
+    if (clickedLink && clickedLink.getAttribute('href') && clickedLink.getAttribute('href').startsWith('#')) {
+        mobileNav.classList.remove('active');
+        mobileMenuBtn.classList.remove('active');
+    }
+    
+    // Also check if clicked element is the mobile CTA button or inside it
+    if (event.target.closest('.mobile-cta-button')) {
+        mobileNav.classList.remove('active');
+        mobileMenuBtn.classList.remove('active');
+    }
+});
+
+// Handle mobile nav close button
+document.addEventListener('click', function(event) {
+    const mobileNav = document.getElementById('mobileNav');
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    
+    if (event.target.closest('.mobile-nav-close')) {
+        mobileNav.classList.remove('active');
+        mobileMenuBtn.classList.remove('active');
+    }
+});
+
+// Use CSS scroll-padding-top to handle the fixed header offset
+// No JavaScript scroll handling needed - let the browser handle it naturally!

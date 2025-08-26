@@ -9,43 +9,135 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/7795d7d81f.js" crossorigin="anonymous"></script>
     <script src="script.js" defer></script>
+    <script src="form-handler.js" defer></script>
     <link href="styles.css" rel="stylesheet">
 </head>
 <body>
-    <div class="header">
-        <div class="inner_header">
-            <div class="logo_container" id="logoContainer">
-                <h1 id="logo">Cruz<span>Landscaping</span></h1>
+    <!-- Modern Professional Header -->
+    <header class="modern-header">
+        <div class="header-container">
+            <!-- Logo Section -->
+            <div class="header-logo" id="logoContainer">
+                <div class="logo-content">
+                    <h1 id="logo">
+                        <span class="logo-main">Cruz</span>
+                        <span class="logo-accent">Landscaping</span>
+                    </h1>
+                    <p class="logo-tagline">Professional Outdoor Solutions</p>
+                </div>
             </div>            
+            
             <!-- Desktop Navigation -->
-            <ul class="navigation">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="quote.html"> 
-                <span class="button-like">GET A QUOTE</span>
-                </a></li>
+            <nav class="header-nav">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link">
+                            <span class="nav-text">Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#services" class="nav-link">
+                            <span class="nav-text">Services</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#portfolio" class="nav-link">
+                            <span class="nav-text">Portfolio</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">
+                            <span class="nav-text">About</span>
+                        </a>
+                    </li>
+                </ul>
+                
+                <!-- CTA Button -->
+                <div class="header-cta">
+                    <a href="#quote" class="cta-button">
+                        <span class="cta-text">Get Free Quote</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </nav>
+            
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" onclick="toggleMobileNav()" aria-label="Toggle mobile menu">
+                <div class="hamburger-lines">
+                    <span class="line line-1"></span>
+                    <span class="line line-2"></span>
+                    <span class="line line-3"></span>
+                </div>
+                <span class="menu-text">Menu</span>
+            </button>
+        </div>
+    </header>
+    
+    <!-- Modern Mobile Navigation -->
+    <div class="modern-mobile-nav" id="mobileNav">
+        <div class="mobile-nav-overlay"></div>
+        <div class="mobile-nav-content">
+            <div class="mobile-nav-header">
+                <div class="mobile-logo">
+                    <span class="mobile-logo-main">Cruz</span>
+                    <span class="mobile-logo-accent">Landscaping</span>
+                </div>
+                <button class="mobile-nav-close" onclick="toggleMobileNav()">
+                    <i class="fa-solid fa-times"></i>
+                </button>
+            </div>
+            
+            <nav class="mobile-nav-menu">
+                <ul class="mobile-nav-list">
+                    <li class="mobile-nav-item">
+                        <a href="#home" class="mobile-nav-link">
+                            <i class="fa-solid fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a href="#services" class="mobile-nav-link">
+                            <i class="fa-solid fa-leaf"></i>
+                            <span>Services</span>
+                        </a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a href="#portfolio" class="mobile-nav-link">
+                            <i class="fa-solid fa-image"></i>
+                            <span>Portfolio</span>
+                        </a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a href="#about" class="mobile-nav-link">
+                            <i class="fa-solid fa-info-circle"></i>
+                            <span>About</span>
+                        </a>
+                    </li>
             </ul>
-            <!-- Hamburger Menu (NEW) -->
-            <div class="hamburger" onclick="toggleMobileNav()">
-                <span></span>
-                <span></span>
-                <span></span>
+                
+                <div class="mobile-nav-cta">
+                    <a href="#quote" class="mobile-cta-button">
+                        <span>Get Free Quote</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </nav>
+            
+            <div class="mobile-nav-footer">
+                <div class="mobile-contact-info">
+                    <p class="mobile-phone">
+                        <i class="fa-solid fa-phone"></i>
+                        704-929-6571
+                    </p>
+                    <p class="mobile-location">
+                        <i class="fa-solid fa-map-marker-alt"></i>
+                        Mooresville, NC
+                    </p>
+                </div>
             </div>
         </div>
     </div>
-    <!-- Mobile Navigation (NEW) -->
-    <div class="mobile-nav" id="mobileNav">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="quote.html" class="button-like">GET A QUOTE</a></li>
-        </ul>
-    </div>
-    <div class="main-content">
+    <div class="main-content" id="home">
     <section aria-label="slideshow" class="slideshow" data-slideshow>
         <div class="slideshow-container">
             <ul data-slides>
@@ -54,7 +146,13 @@
                     <div class="slide-overlay">
                         <div class="slide-content">
                             <h2>Transform Your Outdoor Space</h2>
-                            <p>Professional landscaping services that bring your vision to life</p>
+                            <p>Professional landscaping services that bring your vision to life with expert design, installation, and maintenance solutions.</p>
+                            <div class="slide-cta">
+                                <a href="#quote" class="slide-cta-button">
+                                    Get Free Quote
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </li>
@@ -62,8 +160,14 @@
                     <img src="images/our-mission.jpg" alt="our-mission" class="home-img">
                     <div class="slide-overlay">
                         <div class="slide-content">
-                            <h2>Our Mission</h2>
-                            <p>Creating beautiful, sustainable landscapes that enhance your property</p>
+                            <h2>Excellence in Every Detail</h2>
+                            <p>Creating beautiful, sustainable landscapes that enhance your property value and bring your outdoor dreams to reality.</p>
+                            <div class="slide-cta">
+                                <a href="#services" class="slide-cta-button">
+                                    View Our Services
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </li>
@@ -71,8 +175,14 @@
                     <img src="images/regency_grill.jpg" alt="regency_grill" class="home-img">
                     <div class="slide-overlay">
                         <div class="slide-content">
-                            <h2>Quality Craftsmanship</h2>
-                            <p>Expert attention to detail in every project we undertake</p>
+                            <h2>Trusted by Homeowners</h2>
+                            <p>Years of experience delivering exceptional results with professional craftsmanship and personalized service.</p>
+                            <div class="slide-cta">
+                                <a href="#portfolio" class="slide-cta-button">
+                                    See Our Work
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </li>
@@ -93,48 +203,556 @@
             </div>
         </div>
     </section>
-    <div class="who-we-are-container">
-        <div class="who-we-are-text">
+    <!-- Who We Are Section -->
+    <section class="who-we-are-section">
+        <div class="who-we-are-header">
             <h2>Who We Are</h2>
-            <p>
-                At Cruz Landscaping, we are passionate about creating beautiful outdoor spaces that enhance the natural beauty of your property. With years of experience and a dedicated team of professionals, we specialize in providing top-quality landscaping services tailored to meet your unique needs and vision. Whether you're looking to transform your backyard into a oasis or add curb appeal to your property, we're here to bring your landscaping dreams to life. We're committed to exceeding your expectations and delivering exceptional results. Trust Cruz Landscaping to be your partner in creating outdoor spaces that inspire and delight.
-            </p>
+            <p>Transforming outdoor spaces with passion, expertise, and unwavering commitment to excellence.</p>
         </div>
-        <div class="who-we-are-image">
-            <img src="images/who-we-are.jpg" alt="Who We Are Image" class="who-we-are-image">
+        
+        <div class="who-we-are-content">
+            <div class="who-we-are-story">
+                <div class="story-card">
+                    <div class="story-icon">
+                        <i class="fa-solid fa-seedling"></i>
+                    </div>
+                    <h3>Our Foundation</h3>
+                    <p>Built on years of experience and a genuine passion for creating beautiful outdoor environments that enhance your property's natural beauty.</p>
+                </div>
+                
+                <div class="story-card">
+                    <div class="story-icon">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <h3>Our Team</h3>
+                    <p>Dedicated professionals who specialize in delivering top-quality landscaping services tailored to your unique vision and requirements.</p>
+                </div>
+                
+                <div class="story-card">
+                    <div class="story-icon">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h3>Our Promise</h3>
+                    <p>Committed to exceeding expectations and delivering exceptional results that transform your outdoor space into an inspiring oasis.</p>
+                </div>
+            </div>
+            
+            <div class="who-we-are-showcase">
+                <div class="showcase-image">
+                    <img src="images/who-we-are.jpg" alt="Cruz Landscaping Professional Team">
+                    <div class="showcase-overlay">
+                        <div class="showcase-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">500+</span>
+                                <span class="stat-label">Projects Completed</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">100%</span>
+                                <span class="stat-label">Satisfaction Rate</span>
+                            </div>
+                        </div>
         </div>
     </div>      
-    <div class="season-container">
-        <div class="season-wrapper">
-            <img src="images/spring.jpg" alt="spring" class="season-image" data-season="spring">
+
+                <div class="showcase-content">
+                    <h3>Why Choose Cruz Landscaping?</h3>
+                    <div class="showcase-features">
+                        <div class="feature-item">
+                            <i class="fa-solid fa-certificate"></i>
+                            <span>Licensed & Insured</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fa-solid fa-clock"></i>
+                            <span>Reliable Service</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fa-solid fa-leaf"></i>
+                            <span>Eco-Friendly Practices</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fa-solid fa-handshake"></i>
+                            <span>Personal Approach</span>
+                        </div>
+                    </div>
+                    <p class="showcase-description">
+                        As your trusted landscaping partner, we bring together expertise, reliability, and innovation to create outdoor spaces that inspire and delight. From initial consultation to project completion, we're dedicated to making your landscaping dreams a reality.
+                    </p>
+                </div>
+            </div>
         </div>
-        <div class="season-wrapper">
-            <img src="images/summer.jpg" alt="summer" class="season-image" data-season="summer">
+    </section>      
+
+
+     <!-- Services Section -->
+     <section id="services">
+         <div class="services-header">
+             <h2>Professional Landscaping Services</h2>
+             <p>Comprehensive outdoor solutions tailored to enhance and maintain your property's natural beauty throughout every season.</p>
+         </div>
+
+         <div class="services-grid">
+             <!-- Service 1: Lawn Care & Maintenance -->
+             <div class="service-card">
+                 <div class="service-image">
+                     <img src="images/service_1.jpg" alt="Professional Lawn Care and Maintenance Services">
+                 </div>
+                 <div class="service-content">
+                     <h3>Lawn Care & Maintenance</h3>
+                     <div class="service-features">
+                         <span class="feature-tag">Weekly Mowing</span>
+                         <span class="feature-tag">Precision Edging</span>
+                         <span class="feature-tag">Trimming</span>
+                     </div>
+                     <p>Professional lawn care services including precision mowing, edging, and trimming. We maintain your lawn's health and appearance with consistent, reliable service that keeps your property looking pristine year-round.</p>
+                     <div class="service-benefits">
+                         <div class="benefit-item">
+                             <i class="fa-solid fa-check"></i>
+                             <span>Consistent weekly service</span>
+                         </div>
+                         <div class="benefit-item">
+                             <i class="fa-solid fa-check"></i>
+                             <span>Professional equipment</span>
+                         </div>
+                         <div class="benefit-item">
+                             <i class="fa-solid fa-check"></i>
+                             <span>Satisfaction guaranteed</span>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+
+             <!-- Service 2: Landscape Design & Installation -->
+             <div class="service-card">
+                 <div class="service-image">
+                     <img src="images/service_2.jpg" alt="Landscape Design and Installation Services">
+                 </div>
+                 <div class="service-content">
+                     <h3>Landscape Design & Installation</h3>
+                     <div class="service-features">
+                         <span class="feature-tag">Custom Design</span>
+                         <span class="feature-tag">Plant Selection</span>
+                         <span class="feature-tag">Installation</span>
+                     </div>
+                     <p>Transform your outdoor space with our comprehensive landscape design and installation services. From concept to completion, we create beautiful, sustainable landscapes that enhance your property's value and curb appeal.</p>
+                     <div class="service-benefits">
+                         <div class="benefit-item">
+                             <i class="fa-solid fa-check"></i>
+                             <span>Custom design consultation</span>
+                         </div>
+                         <div class="benefit-item">
+                             <i class="fa-solid fa-check"></i>
+                             <span>Native plant expertise</span>
+                         </div>
+                         <div class="benefit-item">
+                             <i class="fa-solid fa-check"></i>
+                             <span>Sustainable practices</span>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+
+             <!-- Service 3: Seasonal Cleanup -->
+             <div class="service-card">
+                 <div class="service-image">
+                     <img src="images/service_3.jpg" alt="Seasonal Cleanup and Maintenance Services">
+                 </div>
+                 <div class="service-content">
+                     <h3>Seasonal Cleanup & Maintenance</h3>
+                     <div class="service-features">
+                         <span class="feature-tag">Leaf Removal</span>
+                         <span class="feature-tag">Debris Cleanup</span>
+                         <span class="feature-tag">Preparation</span>
+                     </div>
+                     <p>Comprehensive seasonal maintenance including leaf removal, debris cleanup, and seasonal preparation. We ensure your landscape transitions smoothly between seasons and remains healthy and attractive.</p>
+                     <div class="service-benefits">
+                         <div class="benefit-item">
+                             <i class="fa-solid fa-check"></i>
+                             <span>Spring & fall cleanup</span>
+                         </div>
+                         <div class="benefit-item">
+                             <i class="fa-solid fa-check"></i>
+                             <span>Storm damage repair</span>
+                         </div>
+                         <div class="benefit-item">
+                             <i class="fa-solid fa-check"></i>
+                             <span>Garden bed preparation</span>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+
+             <!-- Service 4: Fertilization & Plant Health -->
+             <div class="service-card">
+                 <div class="service-image">
+                     <img src="images/service_4.jpg" alt="Lawn Fertilization and Plant Health Services">
+                 </div>
+                 <div class="service-content">
+                     <h3>Fertilization & Plant Health</h3>
+                     <div class="service-features">
+                         <span class="feature-tag">Soil Analysis</span>
+                         <span class="feature-tag">Fertilization</span>
+                         <span class="feature-tag">Weed Control</span>
+                     </div>
+                     <p>Advanced fertilization programs and plant health management to ensure your landscape thrives. Our targeted treatments promote healthy growth while preventing disease and pest issues.</p>
+                     <div class="service-benefits">
+                         <div class="benefit-item">
+                             <i class="fa-solid fa-check"></i>
+                             <span>Customized treatment plans</span>
+                         </div>
+                         <div class="benefit-item">
+                             <i class="fa-solid fa-check"></i>
+                             <span>Organic options available</span>
+                         </div>
+                         <div class="benefit-item">
+                             <i class="fa-solid fa-check"></i>
+                             <span>Licensed professionals</span>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+
+         <!-- Call to Action -->
+         <div class="services-cta">
+             <div class="cta-content">
+                 <h3>Ready to Transform Your Landscape?</h3>
+                 <p>Contact us today for a free consultation and personalized service quote.</p>
+                 <a href="#quote" class="cta-button">Get Free Estimate</a>
+             </div>
+         </div>
+     </section>
+
+     <!-- Portfolio Section -->
+     <section id="portfolio">
+         <div class="portfolio-header">
+             <h2>Our Portfolio</h2>
+             <p>Explore our collection of successful landscaping projects that showcase our expertise and commitment to excellence.</p>
+         </div>
+
+         <!-- Featured Projects -->
+         <div class="portfolio-featured">
+             <h3>Featured Projects</h3>
+             <div class="featured-grid">
+                 <div class="featured-project large">
+                     <div class="project-image">
+                         <img src="images/regency_poison.jpg" alt="Premium Residential Landscaping">
+                         <div class="project-overlay">
+                             <div class="project-info">
+                                 <h4>Premium Residential Design</h4>
+                                 <p>Complete landscape transformation</p>
+                                 <span class="project-category">Residential</span>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+                 
+                 <div class="featured-project">
+                     <div class="project-image">
+                         <img src="images/regency_grill.jpg" alt="Outdoor Living Space Design">
+                         <div class="project-overlay">
+                             <div class="project-info">
+                                 <h4>Outdoor Entertainment</h4>
+                                 <p>Custom outdoor living area</p>
+                                 <span class="project-category">Commercial</span>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+                 
+                 <div class="featured-project">
+                     <div class="project-image">
+                         <img src="images/who-we-are.jpg" alt="Professional Landscape Maintenance">
+                         <div class="project-overlay">
+                             <div class="project-info">
+                                 <h4>Maintenance Excellence</h4>
+                                 <p>Year-round care program</p>
+                                 <span class="project-category">Maintenance</span>
+                             </div>
         </div>
-        <div class="season-wrapper">
-            <img src="images/fall.jpg" alt="fall" class="season-image" data-season="fall">
         </div>
-        <div class="season-wrapper">
-            <img src="images/winter.jpg" alt="winter" class="season-image" data-season="winter">
         </div>
     </div>
 </div>
-    <footer>
-        <div class="footerContainer">
-            <div class="socialIcons">
-                <a href=""><i class="fa-brands fa-facebook"></i></a>
-                <a href=""><i class="fa-brands fa-instagram"></i></a>
-                <a href=""><i class="fa-brands fa-linkedin"></i></a>
-            </div>
-            <div class="footerNav">
-                <ul>
-                    <li><a href="quote.html">Get in Touch: 704-929-6571</a></li>
-                    <li><a href="quote.html">Location: Mooresville, North Carolina</a></li>
-                </ul>
+
+         
+
+         <!-- Call to Action -->
+         <div class="portfolio-cta">
+             <div class="portfolio-cta-content">
+                 <h3>Ready to Start Your Project?</h3>
+                 <p>Let's discuss how we can transform your outdoor space with our proven expertise.</p>
+                 <a href="#quote" class="portfolio-cta-button">Schedule Consultation</a>
+             </div>
+         </div>
+     </section>
+
+     <!-- About Section -->
+     <section id="about">
+         <div class="about-header">
+             <h2>About Us</h2>
+         </div>
+
+         <div class="about-intro">
+             <div class="about-intro-content">
+                 <h1>Cruz Landscaping - Lake Norman Area</h1>
+                 <p>We are a dedicated team of landscaping professionals committed to providing exceptional services to our clients. With years of experience and a passion for creating beautiful outdoor spaces, we take pride in every project we undertake.</p>
+             </div>
+         </div>
+
+         <div class="about-mission-container">
+             <div class="about-mission-image">
+                 <img src="images/spring.jpg" alt="Our Mission in Action" class="about-mission-img">
+             </div>
+             <div class="about-mission-text">
+                 <h2>Our Mission</h2>
+                 <p>
+                     At Cruz Landscaping, our mission is centered around delivering unparalleled customer satisfaction. We aim to create outdoor spaces that not only meet but exceed our clients' expectations. With a relentless focus on exceptional service, we strive to build lasting relationships with our clients based on trust, transparency, and reliability. Our team is committed to listening to our clients' needs, offering personalized solutions, and ensuring that every step of the landscaping process is smooth and enjoyable.
+                 </p>
+             </div>
+         </div>   
+
+         <div class="about-values-container">
+             <div class="about-value-item">
+                 <i class="fa-solid fa-hands"></i>
+                 <h3 class="about-value-title">Landscaping Experts</h3>
+                 <p class="about-value-description">Safeguard your outdoor space with expert care and attention.</p>
+             </div>
+             <div class="about-value-item">
+                 <i class="fa-solid fa-stopwatch"></i>
+                 <h3 class="about-value-title">Reliable Service</h3>
+                 <p class="about-value-description">Trust us to get the job done.</p>
+             </div>
+             <div class="about-value-item">
+                 <i class="fa-solid fa-people-group"></i>
+                 <h3 class="about-value-title">Family Owned</h3>
+                 <p class="about-value-description">Treating your outdoor space as if it were our own.</p>
+             </div>
+             <div class="about-value-item">
+                 <i class="fa-solid fa-handshake"></i>
+                 <h3 class="about-value-title">Partnership</h3>
+                 <p class="about-value-description">Building strong connections with our clients.</p>
+             </div>
+         </div>
+     </section>
+
+     <!-- Contact Section -->
+     <section id="quote">
+         <!-- Process Section -->
+         <div class="contact-process-section">
+             <div class="contact-process-header">
+                 <h2>Our Process</h2>
+                 <p>From initial consultation to project completion, we ensure a seamless experience tailored to your needs.</p>
+             </div>
+
+             <div class="contact-process-grid">
+                 <div class="contact-process-step">
+                     <div class="step-number">01</div>
+                     <div class="step-content">
+                         <h3>First Contact</h3>
+                         <p>Reach out to us to discuss your landscaping needs and schedule an initial consultation.</p>
+                     </div>
+                 </div>
+                 <div class="contact-process-step">
+                     <div class="step-number">02</div>
+                     <div class="step-content">
+                         <h3>Quote Visit</h3>
+                         <p>Our team will visit your property to assess your needs and provide a detailed quote for our services.</p>
+                     </div>
+                 </div>
+                 <div class="contact-process-step">
+                     <div class="step-number">03</div>
+                     <div class="step-content">
+                         <h3>Planning</h3>
+                         <p>Together, we'll create a customized plan tailored to your property's requirements and preferences.</p>
+                     </div>
+                 </div>
+                 <div class="contact-process-step">
+                     <div class="step-number">04</div>
+                     <div class="step-content">
+                         <h3>Service Commencement</h3>
+                         <p>Once the plan is finalized, we'll begin our professional landscaping and maintenance services.</p>
+                     </div>
+                 </div>
+             </div>
+         </div>
+
+         <!-- Contact Form Section -->
+         <div class="contact-main-section">
+             <div class="contact-container">
+                 <div class="contact-info-section">
+                     <div class="contact-info-content">
+                         <h2>Get In Touch</h2>
+                         <p>Ready to transform your outdoor space? Contact us today for a free consultation and personalized service quote.</p>
+                         
+                         <div class="contact-methods">
+                             <div class="contact-method">
+                                 <div class="contact-icon">
+                                     <i class="fa-solid fa-phone"></i>
+                                 </div>
+                                 <div class="contact-details">
+                                     <h4>Phone</h4>
+                                     <p>704-929-6571</p>
+                                 </div>
+                             </div>
+                             
+                             <div class="contact-method">
+                                 <div class="contact-icon">
+                                     <i class="fa-solid fa-envelope"></i>
+                                 </div>
+                                 <div class="contact-details">
+                                     <h4>Email</h4>
+                                     <p>CruzLandscapingBusiness@gmail.com</p>
+                                 </div>
+                             </div>
+                             
+                             <div class="contact-method">
+                                 <div class="contact-icon">
+                                     <i class="fa-solid fa-map-marker-alt"></i>
+                                 </div>
+                                 <div class="contact-details">
+                                     <h4>Service Area</h4>
+                                     <p>Mooresville, NC</p>
+                                 </div>
+                             </div>
+                         </div>
+                         
+                         <div class="contact-cta">
+                             <p>We look forward to working with you!</p>
+                         </div>
+                     </div>
+                 </div>
+                 
+                 <div class="contact-form-section">
+                     <div class="contact-form-container">
+                         <h3>Request a Free Quote</h3>
+                         <p>Fill out the form below and we'll get back to you within 24 hours.</p>
+                         
+                         <form class="contact-form">
+                             <div class="form-row">
+                                 <div class="form-group">
+                                     <label for="fname">First Name *</label>
+                                     <input type="text" id="fname" name="fname" required>
+                                 </div>
+                                 <div class="form-group">
+                                     <label for="lname">Last Name *</label>
+                                     <input type="text" id="lname" name="lname" required>
+                                 </div>
+                             </div>
+                             
+                             <div class="form-row">
+                                 <div class="form-group">
+                                     <label for="phone">Phone Number *</label>
+                                     <input type="tel" id="phone" name="phone" required>
+                                 </div>
+                                 <div class="form-group">
+                                     <label for="email">Email Address *</label>
+                                     <input type="email" id="email" name="email" required>
+                                 </div>
+                             </div>
+                             
+                             <div class="form-group full-width">
+                                 <label for="message">Tell us about your project</label>
+                                 <textarea id="message" name="message" placeholder="Describe your landscaping needs, property size, specific services you're interested in, or any questions you have..."></textarea>
+                             </div>
+                             
+                             <button type="submit" class="contact-submit-btn">
+                                 Send Message
+                                 <i class="fa-solid fa-arrow-right"></i>
+                             </button>
+                         </form>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </section>
+ </div>
+    <!-- Modern Professional Footer -->
+    <footer class="modern-footer">
+        <div class="footer-main">
+            <div class="footer-container">
+                <!-- Company Info -->
+                <div class="footer-section company-info">
+                    <div class="footer-logo">
+                        <h3>
+                            <span class="footer-logo-main">Cruz</span>
+                            <span class="footer-logo-accent">Landscaping</span>
+                        </h3>
+                        <p class="footer-tagline">Professional Outdoor Solutions</p>
+                    </div>
+                    <p class="company-description">
+                        Transforming outdoor spaces with expertise, reliability, and unwavering commitment to excellence. Your trusted landscaping partner in Mooresville, NC.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-section quick-links">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#quote">Get Quote</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div class="footer-section services-info">
+                    <h4>Our Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services">Lawn Care & Maintenance</a></li>
+                        <li><a href="#services">Landscape Design</a></li>
+                        <li><a href="#services">Seasonal Cleanup</a></li>
+                        <li><a href="#services">Fertilization & Plant Health</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-section contact-info">
+                    <h4>Contact Information</h4>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fa-solid fa-phone"></i>
+                            <div class="contact-text">
+                                <span class="contact-label">Phone</span>
+                                <a href="tel:704-929-6571">704-929-6571</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa-solid fa-envelope"></i>
+                            <div class="contact-text">
+                                <span class="contact-label">Email</span>
+                                <a href="mailto:CruzLandscapingBusiness@gmail.com">CruzLandscapingBusiness@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa-solid fa-map-marker-alt"></i>
+                            <div class="contact-text">
+                                <span class="contact-label">Service Area</span>
+                                <span>Mooresville, North Carolina</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>   
         </div>
-        <div class="footerBottom">
-            <p>Copyright &copy; 2024 Cruz Landscaping. Designed by David Cruz.</p>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="footer-bottom-container">
+                <div class="footer-copyright">
+                    <p>&copy; 2024 Cruz Landscaping. All rights reserved.</p>
+                </div>
+                <div class="footer-credits">
+                    <p>Designed by David Cruz</p>
+                </div>
+                <div class="footer-cta">
+                    <a href="#quote" class="footer-cta-button">
+                        <span>Get Free Quote</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
         </div>
     </footer>
 </body>
