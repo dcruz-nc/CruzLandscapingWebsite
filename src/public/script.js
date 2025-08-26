@@ -150,7 +150,35 @@ function handleSwipe() {
 }
 
 // Initialize slideshow when DOM is loaded
-document.addEventListener('DOMContentLoaded', initSlideshow);
+document.addEventListener('DOMContentLoaded', () => {
+    initSlideshow();
+    initScrollAnimations();
+});
+
+/* Scroll Animation System */
+function initScrollAnimations() {
+    const observerOptions = {
+        threshold: 0.2,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Add animation class to trigger animations
+                if (entry.target.classList.contains('who-we-are-section')) {
+                    entry.target.classList.add('animate');
+                }
+            }
+        });
+    }, observerOptions);
+
+    // Observe the Who We Are section
+    const whoWeAreSection = document.querySelector('.who-we-are-section');
+    if (whoWeAreSection) {
+        observer.observe(whoWeAreSection);
+    }
+}
 
 /* Modern Mobile Navigation Toggle */
 function toggleMobileNav() {
