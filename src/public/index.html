@@ -13,38 +13,129 @@
     <link href="styles.css" rel="stylesheet">
 </head>
 <body>
-    <div class="header">
-        <div class="inner_header">
-            <div class="logo_container" id="logoContainer">
-                <h1 id="logo">Cruz<span>Landscaping</span></h1>
+    <!-- Modern Professional Header -->
+    <header class="modern-header">
+        <div class="header-container">
+            <!-- Logo Section -->
+            <div class="header-logo" id="logoContainer">
+                <div class="logo-content">
+                    <h1 id="logo">
+                        <span class="logo-main">Cruz</span>
+                        <span class="logo-accent">Landscaping</span>
+                    </h1>
+                    <p class="logo-tagline">Professional Outdoor Solutions</p>
+                </div>
             </div>            
+            
             <!-- Desktop Navigation -->
-            <ul class="navigation">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#quote"> 
-                <span class="button-like">GET A QUOTE</span>
-                </a></li>
+            <nav class="header-nav">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link">
+                            <span class="nav-text">Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#services" class="nav-link">
+                            <span class="nav-text">Services</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#portfolio" class="nav-link">
+                            <span class="nav-text">Portfolio</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">
+                            <span class="nav-text">About</span>
+                        </a>
+                    </li>
+                </ul>
+                
+                <!-- CTA Button -->
+                <div class="header-cta">
+                    <a href="#quote" class="cta-button">
+                        <span class="cta-text">Get Free Quote</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </nav>
+            
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" onclick="toggleMobileNav()" aria-label="Toggle mobile menu">
+                <div class="hamburger-lines">
+                    <span class="line line-1"></span>
+                    <span class="line line-2"></span>
+                    <span class="line line-3"></span>
+                </div>
+                <span class="menu-text">Menu</span>
+            </button>
+        </div>
+    </header>
+    
+    <!-- Modern Mobile Navigation -->
+    <div class="modern-mobile-nav" id="mobileNav">
+        <div class="mobile-nav-overlay"></div>
+        <div class="mobile-nav-content">
+            <div class="mobile-nav-header">
+                <div class="mobile-logo">
+                    <span class="mobile-logo-main">Cruz</span>
+                    <span class="mobile-logo-accent">Landscaping</span>
+                </div>
+                <button class="mobile-nav-close" onclick="toggleMobileNav()">
+                    <i class="fa-solid fa-times"></i>
+                </button>
+            </div>
+            
+            <nav class="mobile-nav-menu">
+                <ul class="mobile-nav-list">
+                    <li class="mobile-nav-item">
+                        <a href="#home" class="mobile-nav-link">
+                            <i class="fa-solid fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a href="#services" class="mobile-nav-link">
+                            <i class="fa-solid fa-leaf"></i>
+                            <span>Services</span>
+                        </a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a href="#portfolio" class="mobile-nav-link">
+                            <i class="fa-solid fa-image"></i>
+                            <span>Portfolio</span>
+                        </a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a href="#about" class="mobile-nav-link">
+                            <i class="fa-solid fa-info-circle"></i>
+                            <span>About</span>
+                        </a>
+                    </li>
             </ul>
-            <!-- Hamburger Menu (NEW) -->
-            <div class="hamburger" onclick="toggleMobileNav()">
-                <span></span>
-                <span></span>
-                <span></span>
+                
+                <div class="mobile-nav-cta">
+                    <a href="#quote" class="mobile-cta-button">
+                        <span>Get Free Quote</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </nav>
+            
+            <div class="mobile-nav-footer">
+                <div class="mobile-contact-info">
+                    <p class="mobile-phone">
+                        <i class="fa-solid fa-phone"></i>
+                        704-929-6571
+                    </p>
+                    <p class="mobile-location">
+                        <i class="fa-solid fa-map-marker-alt"></i>
+                        Mooresville, NC
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
-    <!-- Mobile Navigation (NEW) -->
-    <div class="mobile-nav" id="mobileNav">
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#quote" class="button-like">GET A QUOTE</a></li>
-        </ul>
     </div>
     <div class="main-content" id="home">
     <section aria-label="slideshow" class="slideshow" data-slideshow>
@@ -426,73 +517,224 @@
          </div>
      </section>
 
-     <!-- Quote Section -->
+     <!-- Contact Section -->
      <section id="quote">
-         <div class="title">
-             <h2>Our Process</h2>
+         <!-- Process Section -->
+         <div class="contact-process-section">
+             <div class="contact-process-header">
+                 <h2>Our Process</h2>
+                 <p>From initial consultation to project completion, we ensure a seamless experience tailored to your needs.</p>
+             </div>
+
+             <div class="contact-process-grid">
+                 <div class="contact-process-step">
+                     <div class="step-number">01</div>
+                     <div class="step-content">
+                         <h3>First Contact</h3>
+                         <p>Reach out to us to discuss your landscaping needs and schedule an initial consultation.</p>
+                     </div>
+                 </div>
+                 <div class="contact-process-step">
+                     <div class="step-number">02</div>
+                     <div class="step-content">
+                         <h3>Quote Visit</h3>
+                         <p>Our team will visit your property to assess your needs and provide a detailed quote for our services.</p>
+                     </div>
+                 </div>
+                 <div class="contact-process-step">
+                     <div class="step-number">03</div>
+                     <div class="step-content">
+                         <h3>Planning</h3>
+                         <p>Together, we'll create a customized plan tailored to your property's requirements and preferences.</p>
+                     </div>
+                 </div>
+                 <div class="contact-process-step">
+                     <div class="step-number">04</div>
+                     <div class="step-content">
+                         <h3>Service Commencement</h3>
+                         <p>Once the plan is finalized, we'll begin our professional landscaping and maintenance services.</p>
+                     </div>
+                 </div>
+             </div>
          </div>
 
-         <div class="process-container">
-             <div class="process-step">
-                 <h3>Step 1: First Contact</h3>
-                 <p>Reach out to us to discuss your landscaping needs and schedule an initial consultation.</p>
-             </div>
-             <div class="process-step">
-                 <h3>Step 2: Quote Visit</h3>
-                 <p>Our team will visit your home or business to assess your lawn care needs and provide a detailed quote for our services.</p>
-             </div>
-             <div class="process-step">
-                 <h3>Step 3: Planning</h3>
-                 <p>Together, we'll create a customized plan tailored to your property's requirements and your preferences.</p>
-             </div>
-             <div class="process-step">
-                 <h3>Step 4: Service Commencement</h3>
-                 <p>Once the plan is finalized, we'll begin our landscaping and maintenance services!</p>
-             </div>
-         </div>
-
-         <div class="quote-container">
-             <img src="images/our-mission.jpg" alt="Contact Us Background" class="quote-image">
-             <div class="quote-left-side">
-                 <h2>Get In Touch</h2>
-                 <p>Feel free to contact us via phone or email. Alternatively, you can fill out the form on the right, and we'll get back to you as soon as possible. We look forward to meeting you!</p>
-                 <p>Phone: 704-929-6571</p>
-                 <p>Email: CruzLandscapingBusiness@gmail.com</p>
-             </div>
-             <div class="quote-form">
-                 <form>
-                     <label for="fname">First Name:</label>
-                     <input type="text" id="fname" name="fname" required>
-                     <label for="lname">Last Name:</label>
-                     <input type="text" id="lname" name="lname" required>
-                     <label for="phone">Phone Number:</label>
-                     <input type="tel" id="phone" name="phone" required>
-                     <label for="email">Email Address:</label>
-                     <input type="email" id="email" name="email" required>
-                     <label for="message">Message:</label>
-                     <textarea id="message" name="message"></textarea>
-                     <input type="submit" value="Submit">
-                 </form>
+         <!-- Contact Form Section -->
+         <div class="contact-main-section">
+             <div class="contact-container">
+                 <div class="contact-info-section">
+                     <div class="contact-info-content">
+                         <h2>Get In Touch</h2>
+                         <p>Ready to transform your outdoor space? Contact us today for a free consultation and personalized service quote.</p>
+                         
+                         <div class="contact-methods">
+                             <div class="contact-method">
+                                 <div class="contact-icon">
+                                     <i class="fa-solid fa-phone"></i>
+                                 </div>
+                                 <div class="contact-details">
+                                     <h4>Phone</h4>
+                                     <p>704-929-6571</p>
+                                 </div>
+                             </div>
+                             
+                             <div class="contact-method">
+                                 <div class="contact-icon">
+                                     <i class="fa-solid fa-envelope"></i>
+                                 </div>
+                                 <div class="contact-details">
+                                     <h4>Email</h4>
+                                     <p>CruzLandscapingBusiness@gmail.com</p>
+                                 </div>
+                             </div>
+                             
+                             <div class="contact-method">
+                                 <div class="contact-icon">
+                                     <i class="fa-solid fa-map-marker-alt"></i>
+                                 </div>
+                                 <div class="contact-details">
+                                     <h4>Service Area</h4>
+                                     <p>Mooresville, NC</p>
+                                 </div>
+                             </div>
+                         </div>
+                         
+                         <div class="contact-cta">
+                             <p>We look forward to working with you!</p>
+                         </div>
+                     </div>
+                 </div>
+                 
+                 <div class="contact-form-section">
+                     <div class="contact-form-container">
+                         <h3>Request a Free Quote</h3>
+                         <p>Fill out the form below and we'll get back to you within 24 hours.</p>
+                         
+                         <form class="contact-form">
+                             <div class="form-row">
+                                 <div class="form-group">
+                                     <label for="fname">First Name *</label>
+                                     <input type="text" id="fname" name="fname" required>
+                                 </div>
+                                 <div class="form-group">
+                                     <label for="lname">Last Name *</label>
+                                     <input type="text" id="lname" name="lname" required>
+                                 </div>
+                             </div>
+                             
+                             <div class="form-row">
+                                 <div class="form-group">
+                                     <label for="phone">Phone Number *</label>
+                                     <input type="tel" id="phone" name="phone" required>
+                                 </div>
+                                 <div class="form-group">
+                                     <label for="email">Email Address *</label>
+                                     <input type="email" id="email" name="email" required>
+                                 </div>
+                             </div>
+                             
+                             <div class="form-group full-width">
+                                 <label for="message">Tell us about your project</label>
+                                 <textarea id="message" name="message" placeholder="Describe your landscaping needs, property size, specific services you're interested in, or any questions you have..."></textarea>
+                             </div>
+                             
+                             <button type="submit" class="contact-submit-btn">
+                                 Send Message
+                                 <i class="fa-solid fa-arrow-right"></i>
+                             </button>
+                         </form>
+                     </div>
+                 </div>
              </div>
          </div>
      </section>
  </div>
-    <footer>
-        <div class="footerContainer">
-            <div class="socialIcons">
-                <a href=""><i class="fa-brands fa-facebook"></i></a>
-                <a href=""><i class="fa-brands fa-instagram"></i></a>
-                <a href=""><i class="fa-brands fa-linkedin"></i></a>
+    <!-- Modern Professional Footer -->
+    <footer class="modern-footer">
+        <div class="footer-main">
+            <div class="footer-container">
+                <!-- Company Info -->
+                <div class="footer-section company-info">
+                    <div class="footer-logo">
+                        <h3>
+                            <span class="footer-logo-main">Cruz</span>
+                            <span class="footer-logo-accent">Landscaping</span>
+                        </h3>
+                        <p class="footer-tagline">Professional Outdoor Solutions</p>
+                    </div>
+                    <p class="company-description">
+                        Transforming outdoor spaces with expertise, reliability, and unwavering commitment to excellence. Your trusted landscaping partner in Mooresville, NC.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-section quick-links">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#quote">Get Quote</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div class="footer-section services-info">
+                    <h4>Our Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services">Lawn Care & Maintenance</a></li>
+                        <li><a href="#services">Landscape Design</a></li>
+                        <li><a href="#services">Seasonal Cleanup</a></li>
+                        <li><a href="#services">Fertilization & Plant Health</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-section contact-info">
+                    <h4>Contact Information</h4>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fa-solid fa-phone"></i>
+                            <div class="contact-text">
+                                <span class="contact-label">Phone</span>
+                                <a href="tel:704-929-6571">704-929-6571</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa-solid fa-envelope"></i>
+                            <div class="contact-text">
+                                <span class="contact-label">Email</span>
+                                <a href="mailto:CruzLandscapingBusiness@gmail.com">CruzLandscapingBusiness@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa-solid fa-map-marker-alt"></i>
+                            <div class="contact-text">
+                                <span class="contact-label">Service Area</span>
+                                <span>Mooresville, North Carolina</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="footerNav">
-                <ul>
-                    <li><a href="quote.html">Get in Touch: 704-929-6571</a></li>
-                    <li><a href="quote.html">Location: Mooresville, North Carolina</a></li>
-                </ul>
-            </div>   
         </div>
-        <div class="footerBottom">
-            <p>Copyright &copy; 2024 Cruz Landscaping. Designed by David Cruz.</p>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="footer-bottom-container">
+                <div class="footer-copyright">
+                    <p>&copy; 2024 Cruz Landscaping. All rights reserved.</p>
+                </div>
+                <div class="footer-credits">
+                    <p>Designed by David Cruz</p>
+                </div>
+                <div class="footer-cta">
+                    <a href="#quote" class="footer-cta-button">
+                        <span>Get Free Quote</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
         </div>
     </footer>
 </body>
