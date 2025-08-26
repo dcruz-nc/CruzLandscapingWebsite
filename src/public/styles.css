@@ -986,10 +986,24 @@ body{
 /* Professional Services Section */
 #services {
     background: linear-gradient(135deg, 
-        rgba(247, 249, 246, 0.98) 0%, 
-        rgba(255, 255, 255, 1) 100%);
+        rgba(248, 250, 252, 0.98) 0%, 
+        rgba(255, 255, 255, 1) 50%,
+        rgba(245, 247, 250, 0.95) 100%);
     padding: 120px 0;
     position: relative;
+}
+
+#services::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(141, 182, 0, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(141, 182, 0, 0.03) 0%, transparent 50%);
+    pointer-events: none;
 }
 
 .services-header {
@@ -1587,10 +1601,24 @@ body{
 
 #portfolio {
     background: linear-gradient(135deg, 
-        rgba(247, 249, 246, 0.98) 0%, 
-        rgba(255, 255, 255, 1) 100%);
+        rgba(250, 251, 253, 0.98) 0%, 
+        rgba(255, 255, 255, 1) 50%,
+        rgba(248, 250, 252, 0.95) 100%);
     padding: 120px 0;
     position: relative;
+}
+
+#portfolio::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 30% 70%, rgba(141, 182, 0, 0.02) 0%, transparent 50%),
+        radial-gradient(circle at 70% 30%, rgba(141, 182, 0, 0.02) 0%, transparent 50%);
+    pointer-events: none;
 }
 
 .portfolio-header {
@@ -1856,10 +1884,24 @@ body{
 
 #about {
     background: linear-gradient(135deg, 
-        rgba(230, 230, 230, 0.3) 0%, 
-        rgba(255, 255, 255, 0.8) 100%);
+        rgba(252, 253, 254, 0.98) 0%, 
+        rgba(255, 255, 255, 1) 50%,
+        rgba(250, 251, 253, 0.95) 100%);
     padding: 120px 0;
     position: relative;
+}
+
+#about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 25% 75%, rgba(141, 182, 0, 0.025) 0%, transparent 50%),
+        radial-gradient(circle at 75% 25%, rgba(141, 182, 0, 0.025) 0%, transparent 50%);
+    pointer-events: none;
 }
 
 .about-header {
@@ -2142,16 +2184,32 @@ body{
 
 #quote {
     background: linear-gradient(135deg, 
-        rgba(230, 230, 230, 0.3) 0%, 
-        rgba(255, 255, 255, 0.8) 100%);
+        rgba(248, 250, 252, 0.98) 0%, 
+        rgba(255, 255, 255, 1) 50%,
+        rgba(245, 247, 250, 0.95) 100%);
 }
 
 /* Process Section */
 .contact-process-section {
     padding: 120px 0 80px;
     background: linear-gradient(135deg, 
-        rgba(247, 249, 246, 0.98) 0%, 
-        rgba(255, 255, 255, 1) 100%);
+        rgba(250, 251, 253, 0.98) 0%, 
+        rgba(255, 255, 255, 1) 50%,
+        rgba(248, 250, 252, 0.95) 100%);
+    position: relative;
+}
+
+.contact-process-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 40% 60%, rgba(141, 182, 0, 0.02) 0%, transparent 50%),
+        radial-gradient(circle at 60% 40%, rgba(141, 182, 0, 0.02) 0%, transparent 50%);
+    pointer-events: none;
 }
 
 .contact-process-header {
@@ -2248,8 +2306,23 @@ body{
 .contact-main-section {
     padding: 80px 0 120px;
     background: linear-gradient(135deg, 
-        rgba(230, 230, 230, 0.3) 0%, 
-        rgba(255, 255, 255, 0.8) 100%);
+        rgba(252, 253, 254, 0.98) 0%, 
+        rgba(255, 255, 255, 1) 50%,
+        rgba(250, 251, 253, 0.95) 100%);
+    position: relative;
+}
+
+.contact-main-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 35% 65%, rgba(141, 182, 0, 0.015) 0%, transparent 50%),
+        radial-gradient(circle at 65% 35%, rgba(141, 182, 0, 0.015) 0%, transparent 50%);
+    pointer-events: none;
 }
 
 .contact-container {
