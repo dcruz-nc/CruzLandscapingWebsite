@@ -2420,14 +2420,28 @@ body{
     font-size: 1.1rem;
     font-weight: 600;
     color: var(--text-primary);
-    margin-bottom: 4px;
+    margin-bottom: 8px;
     letter-spacing: -0.01em;
 }
 
 .contact-details p {
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: var(--earth-600);
-    font-weight: 400;
+    font-weight: 500;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.contact-details a {
+    color: var(--earth-600);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 300ms ease;
+}
+
+.contact-details a:hover {
+    color: var(--green-600);
+    text-decoration: underline;
 }
 
 .contact-cta {
