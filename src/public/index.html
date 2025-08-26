@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/7795d7d81f.js" crossorigin="anonymous"></script>
     <script src="script.js" defer></script>
+    <script src="form-handler.js" defer></script>
     <link href="styles.css" rel="stylesheet">
 </head>
 <body>
@@ -23,7 +24,7 @@
                 <li><a href="#services">Services</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="quote.html"> 
+                <li><a href="#quote"> 
                 <span class="button-like">GET A QUOTE</span>
                 </a></li>
             </ul>
@@ -42,7 +43,7 @@
             <li><a href="#services">Services</a></li>
             <li><a href="#portfolio">Portfolio</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="quote.html" class="button-like">GET A QUOTE</a></li>
+            <li><a href="#quote" class="button-like">GET A QUOTE</a></li>
         </ul>
     </div>
     <div class="main-content" id="home">
@@ -241,6 +242,57 @@
                  <i class="fa-solid fa-handshake"></i>
                  <h3 class="value-title">Partnership</h3>
                  <p class="value-description">Building strong connections with our clients.</p>
+             </div>
+         </div>
+     </section>
+
+     <!-- Quote Section -->
+     <section id="quote">
+         <div class="title">
+             <h2>Our Process</h2>
+         </div>
+
+         <div class="process-container">
+             <div class="process-step">
+                 <h3>Step 1: First Contact</h3>
+                 <p>Reach out to us to discuss your landscaping needs and schedule an initial consultation.</p>
+             </div>
+             <div class="process-step">
+                 <h3>Step 2: Quote Visit</h3>
+                 <p>Our team will visit your home or business to assess your lawn care needs and provide a detailed quote for our services.</p>
+             </div>
+             <div class="process-step">
+                 <h3>Step 3: Planning</h3>
+                 <p>Together, we'll create a customized plan tailored to your property's requirements and your preferences.</p>
+             </div>
+             <div class="process-step">
+                 <h3>Step 4: Service Commencement</h3>
+                 <p>Once the plan is finalized, we'll begin our landscaping and maintenance services!</p>
+             </div>
+         </div>
+
+         <div class="quote-container">
+             <img src="images/our-mission.jpg" alt="Contact Us Background" class="quote-image">
+             <div class="quote-left-side">
+                 <h2>Get In Touch</h2>
+                 <p>Feel free to contact us via phone or email. Alternatively, you can fill out the form on the right, and we'll get back to you as soon as possible. We look forward to meeting you!</p>
+                 <p>Phone: 704-929-6571</p>
+                 <p>Email: CruzLandscapingBusiness@gmail.com</p>
+             </div>
+             <div class="quote-form">
+                 <form>
+                     <label for="fname">First Name:</label>
+                     <input type="text" id="fname" name="fname" required>
+                     <label for="lname">Last Name:</label>
+                     <input type="text" id="lname" name="lname" required>
+                     <label for="phone">Phone Number:</label>
+                     <input type="tel" id="phone" name="phone" required>
+                     <label for="email">Email Address:</label>
+                     <input type="email" id="email" name="email" required>
+                     <label for="message">Message:</label>
+                     <textarea id="message" name="message"></textarea>
+                     <input type="submit" value="Submit">
+                 </form>
              </div>
          </div>
      </section>
