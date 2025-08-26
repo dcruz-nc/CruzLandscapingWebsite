@@ -179,8 +179,9 @@ document.addEventListener('click', function(event) {
     const mobileNav = document.getElementById('mobileNav');
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     
-    // Check if the clicked element is an anchor link inside mobile nav
-    if (event.target.tagName === 'A' && event.target.getAttribute('href') && event.target.getAttribute('href').startsWith('#')) {
+    // Check if the clicked element is inside a mobile nav link
+    const clickedLink = event.target.closest('.mobile-nav-link');
+    if (clickedLink && clickedLink.getAttribute('href') && clickedLink.getAttribute('href').startsWith('#')) {
         mobileNav.classList.remove('active');
         mobileMenuBtn.classList.remove('active');
     }
