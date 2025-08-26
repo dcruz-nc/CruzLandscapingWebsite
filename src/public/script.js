@@ -174,13 +174,19 @@ document.addEventListener('click', function(event) {
     }
 });
 
-// Close mobile nav when clicking on anchor links
+// Close mobile nav when clicking on anchor links or CTA buttons
 document.addEventListener('click', function(event) {
     const mobileNav = document.getElementById('mobileNav');
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     
     // Check if the clicked element is an anchor link inside mobile nav
     if (event.target.tagName === 'A' && event.target.getAttribute('href') && event.target.getAttribute('href').startsWith('#')) {
+        mobileNav.classList.remove('active');
+        mobileMenuBtn.classList.remove('active');
+    }
+    
+    // Also check if clicked element is the mobile CTA button or inside it
+    if (event.target.closest('.mobile-cta-button')) {
         mobileNav.classList.remove('active');
         mobileMenuBtn.classList.remove('active');
     }
