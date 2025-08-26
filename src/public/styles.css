@@ -62,12 +62,28 @@ body{
     left: 0;
     width: 100%;
     height: 90px;
-    background: linear-gradient(180deg, rgba(35,35,35,0.85), rgba(35,35,35,0.7));
-    backdrop-filter: saturate(120%) blur(6px);
-    -webkit-backdrop-filter: saturate(120%) blur(6px);
+    background: linear-gradient(180deg, 
+        rgba(35,35,35,0.95) 0%, 
+        rgba(35,35,35,0.88) 30%, 
+        rgba(35,35,35,0.78) 70%, 
+        rgba(35,35,35,0.68) 100%);
+    backdrop-filter: saturate(140%) blur(12px);
+    -webkit-backdrop-filter: saturate(140%) blur(12px);
     z-index: 2; 
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header:hover {
+    backdrop-filter: saturate(160%) blur(16px);
+    -webkit-backdrop-filter: saturate(160%) blur(16px);
+    background: linear-gradient(180deg, 
+        rgba(35,35,35,0.98) 0%, 
+        rgba(35,35,35,0.92) 30%, 
+        rgba(35,35,35,0.82) 70%, 
+        rgba(35,35,35,0.72) 100%);
 }
 
 .inner_header {
@@ -77,6 +93,25 @@ body{
     display: block;
     margin: 0 auto;
     padding: 0 20px;
+    position: relative;
+}
+
+.inner_header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        var(--green-500) 20%, 
+        var(--green-600) 50%, 
+        var(--green-500) 80%, 
+        transparent 100%);
+    border-radius: 1px;
+    opacity: 0.6;
 }
 
 .logo_container {
@@ -86,18 +121,55 @@ body{
 }
 
 .logo_container h1 {
-    color:   white;
+    color: white;
     height: 100%;
     display: table-cell;
     vertical-align: middle;
     font-family: 'Roboto';
-    font-size: 30px;
+    font-size: 32px;
     font-weight: 200;
+    letter-spacing: -0.02em;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.logo_container h1:hover {
+    transform: scale(1.02);
+    text-shadow: 0 4px 16px rgba(0,0,0,0.4);
 }
 
 .logo_container h1 span {
     font-weight: 800;
-    color: #8DB600
+    background: linear-gradient(135deg, var(--green-500), var(--green-600), var(--green-500));
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+    animation: gradientFlow 3s ease-in-out infinite;
+}
+
+.logo_container h1 span::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--green-500), var(--green-600));
+    border-radius: 1px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.logo_container h1:hover span::after {
+    transform: scaleX(1);
+}
+
+@keyframes gradientFlow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
 }
 
 .navigation {
@@ -124,8 +196,15 @@ body{
     color: rgba(255, 255, 255, 0.92);
     font-family: 'Roboto';
     font-size: 16px;
+    font-weight: 300;
     position: relative;
     padding: 0 2px;
+    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navigation li a:hover {
+    color: rgba(255, 255, 255, 1);
+    transform: translateY(-1px);
 }
 
 .navigation li a::after {
@@ -134,11 +213,13 @@ body{
     left: 0;
     bottom: 18px;
     width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, #8DB600, #6D8D00);
+    height: 3px;
+    background: linear-gradient(90deg, var(--green-500), var(--green-600));
     transform: scaleX(0);
     transform-origin: left;
-    transition: transform 200ms ease;
+    transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 2px;
+    box-shadow: 0 2px 8px rgba(141, 182, 0, 0.4);
 }
 
 .navigation li a:hover::after {
@@ -146,41 +227,60 @@ body{
 }
 
 .navigation .button-like {
-    background-color: #8DB600; 
-    color: #112;
+    background: linear-gradient(135deg, var(--green-500), var(--green-600));
+    color: white;
     border: none;
-    padding: 10px 22px;
+    padding: 12px 26px;
     cursor: pointer;
     font-family: 'Roboto';
     font-size: 15px;
-    border-radius: 12px;
-    box-shadow: 0 8px 18px rgba(141, 182, 0, 0.35);
-    transition: transform 150ms ease, background-color 200ms ease, box-shadow 200ms ease;
+    font-weight: 500;
+    border-radius: 25px;
+    box-shadow: 0 8px 24px rgba(141, 182, 0, 0.3);
+    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
 }
 
+
+
 .navigation .button-like:hover {
-    background-color: #6D8D00; 
-    color: white;
-    transform: translateY(-1px);
-    box-shadow: 0 12px 28px rgba(109, 141, 0, 0.38);
+    background: linear-gradient(135deg, var(--green-600), var(--green-700));
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(109, 141, 0, 0.4);
+    border-radius: 28px;
 }
+
+
 
 /* Hamburger Menu Styles */
 .hamburger {
     display: none;
     flex-direction: column;
     cursor: pointer;
-    padding: 10px;
+    padding: 12px;
     float: right;
     margin-top: 20px;
+    border-radius: 8px;
+    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hamburger:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
 }
 
 .hamburger span {
-    width: 25px;
+    width: 26px;
     height: 3px;
-    background-color: white;
+    background: linear-gradient(90deg, white, rgba(255, 255, 255, 0.8));
     margin: 3px 0;
-    transition: 0.3s;
+    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 2px;
+}
+
+.hamburger:hover span {
+    background: linear-gradient(90deg, var(--green-500), white);
 }
 
 /* Mobile Navigation Menu */
@@ -190,9 +290,16 @@ body{
     top: 70px;
     left: 0;
     width: 100%;
-    background-color: rgba(34, 34, 34, 0.95);
+    background: linear-gradient(180deg, 
+        rgba(34, 34, 34, 0.98) 0%, 
+        rgba(34, 34, 34, 0.95) 50%, 
+        rgba(34, 34, 34, 0.92) 100%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     z-index: 3;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
 }
 
 .mobile-nav ul {
@@ -209,35 +316,72 @@ body{
 
 .mobile-nav li a {
     display: block;
-    padding: 15px 20px;
+    padding: 18px 20px;
     color: white;
     font-family: 'Roboto';
     font-size: 16px;
+    font-weight: 300;
     text-decoration: none;
+    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.mobile-nav li a::before {
+    content: '';
+    position: absolute;
+    left: -100%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(141, 182, 0, 0.15) 50%, 
+        transparent 100%);
+    transition: left 400ms ease;
 }
 
 .mobile-nav li a:hover {
-    background-color: rgba(141, 182, 0, 0.2);
+    background: linear-gradient(90deg, 
+        rgba(141, 182, 0, 0.1) 0%, 
+        rgba(141, 182, 0, 0.2) 50%, 
+        rgba(141, 182, 0, 0.1) 100%);
+    transform: translateX(4px);
+}
+
+.mobile-nav li a:hover::before {
+    left: 100%;
 }
 
 .mobile-nav .button-like {
-    background-color: #8DB600;
+    background: linear-gradient(135deg, var(--green-500), var(--green-600));
     color: white;
     border: none;
-    margin: 10px 20px;
-    padding: 10px 20px;
+    margin: 15px 20px;
+    padding: 14px 24px;
     cursor: pointer;
     font-family: 'Roboto';
     font-size: 16px;
-    border-radius: 5px;
+    font-weight: 500;
+    border-radius: 25px;
     display: block;
     text-align: center;
     text-decoration: none;
+    box-shadow: 0 6px 20px rgba(141, 182, 0, 0.3);
+    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
 }
 
+
+
 .mobile-nav .button-like:hover {
-    background-color: #6D8D00;
+    background: linear-gradient(135deg, var(--green-600), var(--green-700));
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(109, 141, 0, 0.4);
 }
+
+
 
 /* home image */
 
