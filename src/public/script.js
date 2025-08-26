@@ -178,25 +178,5 @@ document.addEventListener('click', function(event) {
     }
 });
 
-// Smooth scroll offset for fixed header
-document.addEventListener('click', function(event) {
-    const target = event.target;
-    
-    // Check if it's an anchor link
-    if (target.tagName === 'A' && target.getAttribute('href').startsWith('#')) {
-        event.preventDefault();
-        
-        const targetId = target.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        
-        if (targetElement) {
-            const headerHeight = document.querySelector('.header').offsetHeight;
-            const targetPosition = targetElement.offsetTop - headerHeight - 20; // 20px additional offset
-            
-            window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
-            });
-        }
-    }
-});
+// Use CSS scroll-padding-top to handle the fixed header offset
+// No JavaScript scroll handling needed - let the browser handle it naturally!

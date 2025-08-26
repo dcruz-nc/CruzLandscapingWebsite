@@ -37,6 +37,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 120px; /* Account for fixed header + extra spacing */
 }
 
 html, body {
