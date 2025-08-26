@@ -167,3 +167,36 @@ document.addEventListener('click', function(event) {
         mobileNav.classList.remove('active');
     }
 });
+
+// Close mobile nav when clicking on anchor links
+document.addEventListener('click', function(event) {
+    const mobileNav = document.getElementById('mobileNav');
+    
+    // Check if the clicked element is an anchor link inside mobile nav
+    if (event.target.tagName === 'A' && event.target.getAttribute('href').startsWith('#')) {
+        mobileNav.classList.remove('active');
+    }
+});
+
+// Smooth scroll offset for fixed header
+document.addEventListener('click', function(event) {
+    const target = event.target;
+    
+    // Check if it's an anchor link
+    if (target.tagName === 'A' && target.getAttribute('href').startsWith('#')) {
+        event.preventDefault();
+        
+        const targetId = target.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+            const headerHeight = document.querySelector('.header').offsetHeight;
+            const targetPosition = targetElement.offsetTop - headerHeight - 20; // 20px additional offset
+            
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        }
+    }
+});

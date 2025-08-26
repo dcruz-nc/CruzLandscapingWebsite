@@ -35,6 +35,10 @@
     --space-2xl: 64px;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 html, body {
     overflow-x: hidden;
     width: 100%;
@@ -396,47 +400,124 @@ body{
 
 .who-we-are-container {
     display: flex;
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin-top: 80px;
+    margin-bottom: 80px;
     align-items: center;
-    gap: 30px;
+    gap: 40px;
+    position: relative;
+    padding: 0 20px;
+}
+
+.who-we-are-container::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 3px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        var(--green-500) 20%, 
+        var(--green-600) 50%, 
+        var(--green-500) 80%, 
+        transparent 100%);
+    border-radius: 2px;
+    opacity: 0.4;
 }
 
 .who-we-are-text { /* container */
     flex: 1;
-    display:flex;
+    display: flex;
     flex-direction: column;
-    padding-right: 20px; 
-    padding: 28px; 
+    padding: 30px 28px; 
     font-family: 'Roboto';
-    color: #232323; 
-    background: #ffffff;
-    border: 1px solid rgba(0,0,0,0.06);
-    border-radius: 16px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.10);
+    color: var(--text-primary); 
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.95) 0%, 
+        rgba(255, 255, 255, 0.98) 100%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(141, 182, 0, 0.15);
+    border-radius: 20px;
+    box-shadow: 0 16px 32px rgba(0,0,0,0.08);
+    position: relative;
+    overflow: hidden;
+    transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.who-we-are-text::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, 
+        var(--green-500) 0%, 
+        var(--green-600) 25%, 
+        var(--green-500) 50%, 
+        var(--green-600) 75%, 
+        var(--green-500) 100%);
+    border-radius: 24px 24px 0 0;
+}
+
+.who-we-are-text::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, 
+        transparent 0%, 
+        transparent 40%, 
+        rgba(141, 182, 0, 0.1) 50%, 
+        transparent 60%, 
+        transparent 100%);
+    border-radius: 50%;
+    filter: blur(8px);
+}
+
+.who-we-are-text:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+    border-color: rgba(141, 182, 0, 0.25);
 }
 
 .who-we-are-text h2 { /* title */
-    font-size: 48px;
+    font-size: 2.8rem;
     line-height: 1.1;
-    letter-spacing: 0.2px;
+    letter-spacing: -0.02em;
     position: relative;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
+    font-weight: 200;
+    background: linear-gradient(135deg, var(--text-primary) 0%, var(--earth-600) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
+
 .who-we-are-text h2::after {
     content: "";
     display: block;
-    width: 72px;
-    height: 4px;
-    margin-top: 10px;
-    background: linear-gradient(90deg, #8DB600, #6D8D00);
-    border-radius: 4px;
+    width: 80px;
+    height: 3px;
+    margin-top: 15px;
+    background: linear-gradient(90deg, 
+        var(--green-500) 0%, 
+        var(--green-600) 50%, 
+        var(--green-500) 100%);
+    border-radius: 2px;
+    box-shadow: 0 2px 8px rgba(141, 182, 0, 0.3);
 }
 
 .who-we-are-text p { /* paragraph */
-    font-size: 20px;
+    font-size: 1.1rem;
     line-height: 1.7;
-    color: #2e2e2e;
+    color: var(--earth-600);
+    font-weight: 300;
+    letter-spacing: 0.01em;
 }
 
 .who-we-are-image {
@@ -444,17 +525,42 @@ body{
     display: flex;
     justify-content: center; 
     align-items: center; 
+    position: relative;
+}
+
+.who-we-are-image::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    background: linear-gradient(135deg, 
+        rgba(141, 182, 0, 0.1) 0%, 
+        rgba(141, 182, 0, 0.05) 50%, 
+        rgba(141, 182, 0, 0.1) 100%);
+    border-radius: 30px;
+    filter: blur(20px);
+    z-index: -1;
 }
 
 .who-we-are-image img {
-    width: 60%;
+    width: 65%;
     aspect-ratio: 1 / 1;
     display: block;
-    border-radius: 15px;
+    border-radius: 20px;
     object-fit: cover;
     object-position: center;
-    box-shadow: 0 10px 26px rgba(0,0,0,0.18);
-    border: 1px solid rgba(0,0,0,0.06);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
+    filter: saturate(1.1) contrast(1.05);
+}
+
+.who-we-are-image:hover img {
+    transform: scale(1.02) rotate(1deg);
+    box-shadow: 0 35px 70px rgba(0,0,0,0.2);
+    filter: saturate(1.2) contrast(1.1);
 }
 
 
@@ -1213,27 +1319,34 @@ body{
 @media (max-width: 768px) {
     .who-we-are-container {
         flex-direction: column;
-        margin-top: 50px;
-        margin-bottom: 50px;
+        margin-top: 60px;
+        margin-bottom: 60px;
         padding: 0 20px;
+        gap: 30px;
+    }
+    
+    .who-we-are-container::before {
+        width: 90%;
+        top: -25px;
     }
     
     .who-we-are-text {
-        padding: 10px 0;
+        padding: 25px 20px;
+        text-align: center;
     }
     
     .who-we-are-text h2 {
-        font-size: 40px;
+        font-size: 2.4rem;
         text-align: center;
     }
     
     .who-we-are-text p {
-        font-size: 18px;
+        font-size: 1rem;
         text-align: center;
     }
     
     .who-we-are-image {
-        margin-top: 20px;
+        margin-top: 15px;
     }
     
     .who-we-are-image img {
@@ -1241,6 +1354,13 @@ body{
         aspect-ratio: 1 / 1;
         object-fit: cover;
         object-position: center;
+    }
+    
+    .who-we-are-image::before {
+        top: -12px;
+        left: -12px;
+        right: -12px;
+        bottom: -12px;
     }
 }
 
