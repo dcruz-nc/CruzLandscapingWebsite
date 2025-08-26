@@ -1120,62 +1120,290 @@ body{
   box-shadow: 0 12px 28px rgba(0,0,0,0.18);
 }
 
-/* about */
+/* About Section */
 
-.about-container {
-    width: 100%; 
-    height: 240px;
-    margin: 0 auto; 
-    margin-top: 50px;
-    margin-bottom: 100px;
-    padding: 100px 0; 
+#about {
+    background: linear-gradient(135deg, 
+        rgba(230, 230, 230, 0.3) 0%, 
+        rgba(255, 255, 255, 0.8) 100%);
+    padding: 120px 0;
+    position: relative;
 }
 
-.about-section {
+.about-header {
     text-align: center;
-    font-family: 'Roboto';
-    color:#232323;
+    max-width: 800px;
+    margin: 0 auto 80px;
+    padding: 0 40px;
 }
 
-.about-section h1 {
-    font-size: 65px; 
+.about-header h2 {
+    font-size: 3.2rem;
+    font-weight: 200;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
 }
 
-.about-section p {
-    font-size: 18px;
-    line-height: 1.5; 
+.about-intro {
+    max-width: 1000px;
+    margin: 0 auto 80px;
+    padding: 0 40px;
 }
 
-/* values */
+.about-intro-content {
+    text-align: center;
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.95) 0%, 
+        rgba(255, 255, 255, 1) 100%);
+    border-radius: 20px;
+    padding: 60px 40px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+    border: 1px solid rgba(141, 182, 0, 0.1);
+}
 
-.our-values-container {
+.about-intro-content h1 {
+    font-size: 2.8rem;
+    font-weight: 300;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
+}
+
+.about-intro-content p {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: var(--earth-600);
+    font-weight: 300;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* About Mission Section */
+.about-mission-container {
     display: flex;
-    justify-content: space-between;
-    margin-top: 80px;
-    margin-bottom: 100px;
+    align-items: center;
+    gap: 60px;
+    max-width: 1400px;
+    margin: 0 auto 80px;
+    padding: 0 40px;
 }
 
-.icon-item {
-    text-align: center;
+.about-mission-image {
     flex: 1;
-    font-family: 'Roboto';
+    position: relative;
 }
 
-.icon-item i {
-    font-size: 70px; 
-    margin-bottom: 10px; 
-    color: #232323; 
+.about-mission-img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
+    filter: saturate(1.1) contrast(1.05);
 }
 
-.value-title {
-    font-size: 18px;
-    margin-bottom: 5px;
-    color: #232323; 
+.about-mission-image:hover .about-mission-img {
+    transform: scale(1.02);
+    filter: saturate(1.2) contrast(1.1);
 }
 
-.value-description {
-    font-size: 14px;
-    color: #232323; 
+.about-mission-text {
+    flex: 1;
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.98) 0%, 
+        rgba(255, 255, 255, 1) 100%);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+    border: 1px solid rgba(141, 182, 0, 0.1);
+    transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.about-mission-text:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    border-color: rgba(141, 182, 0, 0.2);
+}
+
+.about-mission-text h2 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
+}
+
+.about-mission-text p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--earth-600);
+    font-weight: 300;
+}
+
+/* About Values Section */
+.about-values-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.about-value-item {
+    text-align: center;
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.98) 0%, 
+        rgba(255, 255, 255, 1) 100%);
+    border-radius: 16px;
+    padding: 40px 24px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+    border: 1px solid rgba(141, 182, 0, 0.1);
+    transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.about-value-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 48px rgba(0,0,0,0.15);
+    border-color: rgba(141, 182, 0, 0.2);
+}
+
+.about-value-item i {
+    font-size: 3rem;
+    color: var(--green-500);
+    margin-bottom: 20px;
+    transition: all 300ms ease;
+}
+
+.about-value-item:hover i {
+    transform: scale(1.1);
+    color: var(--green-600);
+}
+
+.about-value-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+}
+
+.about-value-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--earth-600);
+    font-weight: 300;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    #about {
+        padding: 80px 0;
+    }
+    
+    .about-header {
+        margin-bottom: 60px;
+        padding: 0 20px;
+    }
+    
+    .about-header h2 {
+        font-size: 2.5rem;
+    }
+    
+    .about-intro {
+        margin-bottom: 60px;
+        padding: 0 20px;
+    }
+    
+    .about-intro-content {
+        padding: 40px 24px;
+    }
+    
+    .about-intro-content h1 {
+        font-size: 2.2rem;
+    }
+    
+    .about-intro-content p {
+        font-size: 1rem;
+    }
+    
+    .about-mission-container {
+        flex-direction: column;
+        gap: 40px;
+        margin-bottom: 60px;
+        padding: 0 20px;
+    }
+    
+    .about-mission-img {
+        height: 300px;
+    }
+    
+    .about-mission-text {
+        padding: 30px 24px;
+    }
+    
+    .about-mission-text h2 {
+        font-size: 1.8rem;
+    }
+    
+    .about-mission-text p {
+        font-size: 1rem;
+    }
+    
+    .about-values-container {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 0 20px;
+    }
+    
+    .about-value-item {
+        padding: 30px 20px;
+    }
+    
+    .about-value-item i {
+        font-size: 2.5rem;
+    }
+    
+    .about-value-title {
+        font-size: 1.1rem;
+    }
+    
+    .about-value-description {
+        font-size: 0.9rem;
+    }
+}
+
+/* Tablet Responsive */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .about-intro {
+        padding: 0 30px;
+    }
+    
+    .about-intro-content {
+        padding: 50px 30px;
+    }
+    
+    .about-mission-container {
+        gap: 50px;
+        padding: 0 30px;
+    }
+    
+    .about-mission-img {
+        height: 350px;
+    }
+    
+    .about-mission-text {
+        padding: 35px 30px;
+    }
+    
+    .about-values-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+        padding: 0 30px;
+    }
 }
 
 /* get a quote */
@@ -1689,48 +1917,7 @@ body{
     }
 }
 
-/* Mobile About Section */
-@media (max-width: 768px) {
-    .about-container {
-        padding: 50px 20px;
-        margin-top: 30px;
-        margin-bottom: 50px;
-    }
-    
-    .about-section h1 {
-        font-size: 40px;
-    }
-    
-    .about-section p {
-        font-size: 16px;
-    }
-}
 
-/* Mobile Our Values Section */
-@media (max-width: 768px) {
-    .our-values-container {
-        flex-direction: column;
-        margin: 40px 20px;
-        gap: 30px;
-    }
-    
-    .icon-item {
-        margin-bottom: 20px;
-    }
-    
-    .icon-item i {
-        font-size: 50px;
-    }
-    
-    .value-title {
-        font-size: 16px;
-    }
-    
-    .value-description {
-        font-size: 14px;
-        padding: 0 20px;
-    }
-}
 
 /* Mobile Process Steps */
 @media (max-width: 768px) {
