@@ -1442,15 +1442,14 @@ body{
 
 .contact-text a,
 .contact-text span {
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 1) !important;
     text-decoration: none;
     font-size: 1rem;
     font-weight: 400;
-    transition: color 300ms ease;
 }
 
 .contact-text a:hover {
-    color: var(--green-500);
+    color: rgba(255, 255, 255, 1) !important;
 }
 
 /* Footer Bottom */
