@@ -3092,6 +3092,118 @@ body{
     transform: rotateY(180deg);
 }
 
+/* Custom Notification System */
+.custom-notification {
+    position: fixed;
+    top: 120px;
+    right: 20px;
+    z-index: 10000;
+    max-width: 400px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(141, 182, 0, 0.1);
+    overflow: hidden;
+    animation: slideInRight 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: 'Roboto', sans-serif;
+}
+
+.custom-notification.success {
+    border-left: 4px solid var(--green-500);
+}
+
+.custom-notification.error {
+    border-left: 4px solid #ef4444;
+}
+
+.custom-notification.info {
+    border-left: 4px solid #3b82f6;
+}
+
+.notification-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 20px;
+}
+
+.notification-icon {
+    font-size: 1.2rem;
+    font-weight: bold;
+    width: 24px;
+    text-align: center;
+}
+
+.custom-notification.success .notification-icon {
+    color: var(--green-500);
+}
+
+.custom-notification.error .notification-icon {
+    color: #ef4444;
+}
+
+.custom-notification.info .notification-icon {
+    color: #3b82f6;
+}
+
+.notification-message {
+    flex: 1;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.notification-close {
+    background: none;
+    border: none;
+    color: #9ca3af;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    transition: all 200ms ease;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.notification-close:hover {
+    background: rgba(0, 0, 0, 0.05);
+    color: #6b7280;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Mobile responsive notifications */
+@media (max-width: 768px) {
+    .custom-notification {
+        top: 100px;
+        right: 10px;
+        left: 10px;
+        max-width: none;
+    }
+    
+    .notification-content {
+        padding: 14px 16px;
+    }
+    
+    .notification-message {
+        font-size: 0.9rem;
+    }
+}
+
 /* glow removed */
 
 /* ===== MOBILE RESPONSIVE STYLES ===== */
