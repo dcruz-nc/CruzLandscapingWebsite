@@ -169,6 +169,9 @@ function initScrollAnimations() {
                 if (entry.target.classList.contains('who-we-are-section')) {
                     entry.target.classList.add('animate');
                 }
+                if (entry.target.id === 'services') {
+                    entry.target.classList.add('animate');
+                }
             }
         });
     }, observerOptions);
@@ -177,6 +180,12 @@ function initScrollAnimations() {
     const whoWeAreSection = document.querySelector('.who-we-are-section');
     if (whoWeAreSection) {
         observer.observe(whoWeAreSection);
+    }
+
+    // Observe the services section
+    const servicesSection = document.querySelector('#services');
+    if (servicesSection) {
+        observer.observe(servicesSection);
     }
 }
 
