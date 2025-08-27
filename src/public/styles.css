@@ -1553,6 +1553,12 @@ body{
         text-align: center;
         flex-direction: column;
         gap: 8px;
+        align-items: center;
+    }
+    
+    .contact-item i {
+        margin-top: 0;
+        margin-bottom: 4px;
     }
     
     .footer-bottom-container {
