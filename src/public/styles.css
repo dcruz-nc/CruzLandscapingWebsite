@@ -841,10 +841,13 @@ body{
     display: block;
     transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
     filter: saturate(1.1) contrast(1.05);
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 .showcase-image:hover img {
-    transform: scale(1.05);
+    transform: translateZ(0) scale3d(1.05, 1.05, 1);
     filter: saturate(1.2) contrast(1.1);
 }
 
@@ -1155,10 +1158,13 @@ body{
     object-position: center;
     transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
     filter: saturate(1.1) contrast(1.05);
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 .service-card:hover .service-image img {
-    transform: scale(1.05);
+    transform: translateZ(0) scale3d(1.05, 1.05, 1);
     filter: saturate(1.2) contrast(1.1);
 }
 
@@ -1788,10 +1794,13 @@ body{
     object-position: center;
     transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
     filter: saturate(1.1) contrast(1.05);
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 .featured-project:hover .project-image img {
-    transform: scale(1.05);
+    transform: translateZ(0) scale3d(1.05, 1.05, 1);
     filter: saturate(1.2) contrast(1.1);
 }
 
@@ -2070,10 +2079,13 @@ body{
     box-shadow: 0 20px 60px rgba(0,0,0,0.15);
     transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
     filter: saturate(1.1) contrast(1.05);
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 .about-mission-image:hover .about-mission-img {
-    transform: scale(1.02);
+    transform: translateZ(0) scale3d(1.02, 1.02, 1);
     filter: saturate(1.2) contrast(1.1);
 }
 
