@@ -1117,8 +1117,8 @@ body{
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 40px;
@@ -1328,6 +1328,7 @@ body{
 /* Tablet Responsive */
 @media (min-width: 769px) and (max-width: 1024px) {
     .services-grid {
+        grid-template-columns: repeat(2, 1fr);
         gap: 30px;
         padding: 0 30px;
     }
